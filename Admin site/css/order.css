@@ -1,0 +1,45 @@
+@import url("admin.css");
+
+/* /// ------- info ---------/// */
+.top {
+    display: flex;
+   justify-content: space-between;
+}
+.top > h4{
+    text-align: center;
+    display: flex;
+    align-items: center;  
+}
+/* -----------------------------------------filter display none ------// */
+.filter_order{
+    /* display: none;  */
+    position: absolute;
+    padding: 20px;
+    width: 180px;
+    right: 140px;
+    background-color: white;
+    border-radius: var(--card-border-radious);
+    box-shadow: var(--box-shadow);
+    border: var(--box-border);
+}
+.filter_order + button{
+    width: 80px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: var(--card-border-radious);
+    box-shadow: var(--box-shadow);
+    border: var(--box-border);
+}
+.top button{
+    padding: 8px;
+    border-radius: var(--card-border-radious);
+}
+.top button h4{
+ text-align: center;
+ display: flex;
+ align-items: center;
+}
+
+/* /// filter ///--------hidden div  */
+
+/* for table data  */
