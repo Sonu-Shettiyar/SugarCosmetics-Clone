@@ -1,0 +1,159 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.footer .readmore{
+    font-weight: 700;
+    padding: 34px 44px;
+}
+
+.footer .readmore i{
+    cursor: pointer;
+    margin-left: 22px;
+    color: rgb(255, 82, 119);
+}
+
+.subscription{
+    margin: 24px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.subscription .first{
+    display: flex;
+    align-items: center;
+}
+
+.subscription .first div{
+    height: 0px;
+    width: 50px;
+    margin: 10px;
+    border: 2px solid rgb(255, 82, 119);
+}
+
+.subscription p{
+    text-align: center;
+    margin: 24px;
+}
+
+.subscription .third{
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.subscription .third input{
+    height: 40px;
+    width: 470px;
+    padding-left: 22px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border: 1px solid black;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.subscription .third button{
+    height: 42px;
+    width: 150px;
+    background-color: black;
+    color: white;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.footer .mainFooter{
+    background-color: black;
+    padding: 14px 46px;
+}
+
+.footer .mainFooter .social svg{
+    background-color: silver;
+    border-radius: 50%;
+    font-size: 22px;
+    padding: 4px;
+}
+
+.footer .mainFooter .social svg:hover{
+    background-color: white;
+}
+
+.footer .mainFooter .social a{
+    margin: 10px;
+}
+
+.footer .mainFooter .social{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.footer .mainFooter .info{
+    color:white;
+    border-top:1px solid silver;
+    border-bottom:1px solid silver;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .mainFooter .info > div{
+    padding: 30px;
+    margin: auto;
+}
+
+.footer .mainFooter .contactus{
+    color: white;
+    padding: 34px;
+    border-bottom: 1px solid silver;
+}
+
+.footer .mainFooter .contactus h2{
+    margin-bottom: 23px;
+}
+
+.footer .mainFooter .contactus .contactContainer{
+    color: white;
+    display: flex;
+}
+
+.footer .mainFooter .contactus .contactContainer div{
+    width: 272px;
+}
+
+.footer .mainFooter .contactus .contactContainer div h4, .footer .mainFooter .contactus .contactContainer div p{
+    line-height: 24px;
+    color: grey;
+}
+
+
+.footer .mainFooter .application{
+    display: flex;   
+    justify-content: center; 
+    color: white;
+    align-items: center;
+}
+
+.footer .mainFooter .application div{
+    padding-top: 12px;
+}
+
+.footer .mainFooter .application div img{
+    margin: 12px;
+    width: 120px;
+}
+
+.footer .copyright{
+    height: 40px;
+    border-top: 1px solid silver;
+    background-color: black;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
