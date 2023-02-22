@@ -1,0 +1,155 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+
+#slideshow{
+    height: 420px;
+}
+
+#slideshow button{
+    position: absolute;
+    border: none;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    top: 320px;
+}
+
+#slideshow button:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+#slideshow button.prev{
+    left: 35px;
+}
+
+#slideshow button.next{
+    left: 1425px;
+}
+
+#slideshow img{
+    width: 100%;
+}
+
+/*  BestSeller Section  */
+
+#bestSeller{
+    height: 450px;
+    background-image: url('https://media.sugarcosmetics.com/upload/homePageBackGroundTexture.jpg');
+    padding: 23px;
+    color: white;
+}
+#bestSeller .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bestSeller .heading div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#bestSeller .cardSection{
+    display: flex;
+    margin: 22px auto;
+    width: 1400px;
+    height: 380px;
+}
+
+#bestSeller .cardSection div.button1, #bestSeller .cardSection div.button2{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#bestSeller .cardSection > div > button{
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+}
+
+#bestSeller .cardSection > div > button:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+#bestSeller .cardSection #cardContainer{
+    width: 1300px;
+}
+
+
+#bestSeller .cardSection #cardContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+#bestSeller .cardSection #cardContainer .card{
+    background-color: white;
+    color: black;
+    width: 280px;
+    height: 380px;
+    border-radius: 20px;
+}
+
+#bestSeller .cardSection #cardContainer .card .image{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+#bestSeller .cardSection #cardContainer .card .image img{
+    width: 150px;
+    height: 220px;
+    border-radius: 20px;
+}
+
+#bestSeller .cardSection #cardContainer .card .body p{
+    text-align: center;
+    font-size: 14px;
+    width: 200px;
+    height: 32px;
+    overflow: hidden;
+    margin: auto;
+}
+
+#bestSeller .cardSection #cardContainer .card{
+    text-align: center;
+}
+
+#bestSeller .cardSection #cardContainer .card .buttoncontainer{
+    margin: 32px 0px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#bestSeller .cardSection #cardContainer .card .buttoncontainer button{
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.wishlist{
+    margin-left: 6px;
+    font-size: 22px;
+}
+
+
+#bestSeller .cardSection #cardContainer .card .buttoncontainer button:nth-child(2){
+    background-color: black;
+    color: white;
+}

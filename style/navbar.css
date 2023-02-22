@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Roboto Flex', sans-serif;
+}
+.discountSection{
+    background-color: black;
+    color: white;
+    border-bottom: 0.25px solid rgb(126, 126, 126);
+    display: flex;
+}
+.discountSection h4{
+    padding-top: 2px;
+    margin-left: 550px;
+}
+.discountSection img{
+    cursor: pointer;
+    margin-left: 500px;
+}
+header{
+    height: 75px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+header .logo{
+    margin-left: 34px;
+    margin-right: 256px;
+}
+
+header .logo img{
+    height: 70px;
+}
+
+header .search{
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+}
+
+header .search input{
+    width: 525px;
+    height: 38px;
+    padding-left: 24px;
+    background-color: #212529;
+    border: 1px solid white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+header .search button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    height: 40px;
+    font-size: 18px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: white;
+    border: none;
+}
+
+header .signup a{
+    text-decoration: none;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: white;
+    display: flex;
+    font-size: 15px;
+    height: 38px;
+    align-items: center;
+}
+
+header .signup i{
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+header .cartpage a{
+    margin: 5px;
+    text-decoration: none;
+}
+
+.nav{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: white;
+    background-color: #212529;
+}
+
+.nav > div{
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    margin-left: 28px;
+    text-align: center;
+    height: 39px;
+}
+#lips{
+    margin-left: 46px;
+}
+.nav > div:hover{
+    border-bottom: 3px solid hwb(347 32% 0%);
+}
+
+.lips{
+    display: none;
+    position: absolute;
+    line-height: 22px;
+    padding-left: 6px;
+    padding-bottom: 6px;
+    border-end-start-radius: 12px;
+    border-end-end-radius: 12px;
+    background-color: white;
+    left: 46px;
+}
+
+.lips > div{
+    margin: 8px;
+    padding-top: 10px;
+}
+
+.eyes{
+    display: none;
+    width: 650px;
+    flex-wrap: wrap;
+    position: absolute;
+    line-height: 22px;
+    padding-left: 6px;
+    padding-bottom: 6px;
+    border-end-start-radius: 12px;
+    border-end-end-radius: 12px;
+    background-color: white;
+    left: 112px;
+}
+
+.eyes > div{
+    width: 200px;
+    margin: 8px;
+    padding-top: 10px;
+}
+
+
+.faces{
+    display: none;
+    width: 920px;
+    flex-wrap: wrap;
+    position: absolute;
+    line-height: 22px;
+    padding-left: 6px;
+    padding-bottom: 6px;
+    border-end-start-radius: 12px;
+    border-end-end-radius: 12px;
+    background-color: white;
+    left: 184px;
+}
+
+.faces > div{
+    width: 280px;
+    margin: 12px;
+    padding-top: 10px;
+}
+
+.skincare{
+    display: none;
+    width: 820px;
+    flex-wrap: wrap;
+    position: absolute;
+    line-height: 22px;
+    padding-left: 6px;
+    padding-bottom: 6px;
+    border-end-start-radius: 12px;
+    border-end-end-radius: 12px;
+    background-color: white;
+    left: 256px;
+}
+
+.skincare > div{
+    width: 250px;
+    margin: 8px;
+    padding-top: 10px;
+}
+
+.accessories{
+    display: none;
+    width: 150px;
+    flex-wrap: wrap;
+    position: absolute;
+    line-height: 22px;
+    padding-left: 6px;
+    padding-bottom: 6px;
+    border-end-start-radius: 12px;
+    border-end-end-radius: 12px;
+    background-color: white;
+    left: 362px;
+}
+
+.accessories > div{
+    width: 150px;
+    margin: 8px;
+    padding-top: 8px;
+}
+
+.gifting{
+    display: none;
+    width: 730px;
+    flex-wrap: wrap;
+    position: absolute;
+    line-height: 22px;
+    padding-left: 6px;
+    padding-bottom: 6px;
+    border-end-start-radius: 12px;
+    border-end-end-radius: 12px;
+    background-color: white;
+    left: 498px;
+}
+
+.gifting > div{
+    width: 200px;
+    margin: 18px;
+    padding-top: 10px;
+}
+
+
+.blog{
+    display: none;
+    width: 730px;
+    flex-wrap: wrap;
+    position: absolute;
+    line-height: 22px;
+    padding-left: 6px;
+    padding-bottom: 6px;
+    border-end-start-radius: 12px;
+    border-end-end-radius: 12px;
+    background-color: white;
+    left: 660px;
+}
+
+.blog > div{
+    width: 200px;
+    margin: 18px;
+    padding-top: 10px;
+}
+
+ul{
+    line-height: 26px;
+    color: rgb(97, 97, 97);;
+    padding-top: 6px;
+    padding-left: 16px;
+}
+
+ul li{
+    font-size: 14px;
+}
+
+ul li:hover{
+    color: grey;
+    font-weight: 700;
+}
