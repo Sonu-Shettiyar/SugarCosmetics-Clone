@@ -1,2 +1,17 @@
 @import url("admin.css");
 
+  /* table data */
+#table_head{
+    background-color: black;
+    color: aliceblue;
+}
+th{
+   width: 18%;
+   border-radius: 5px;
+}
+#Address{
+    width: 800px;
+}
+td{
+    text-align: center;
+}

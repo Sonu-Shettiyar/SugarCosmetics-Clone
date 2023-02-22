@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Bliss</title>
+    <link rel="icon" href="./images/fav (transparent) black.png" type="image/x-icon">
+    <style>
+    body{ 
+        background-color: rgba(54, 132, 200, 0.066);  
+      background-image: url(https://rare-gallery.com/uploads/posts/534669-blur-lights.jpg);
+   background-size: cover;
+    }
+        #main_div>h1{
+           
+            text-align: center;
+        }
+        #main_div{
+            width: 50%;
+            margin: auto;
+           border: dotted rgb(249, 192, 192);
+          margin-top: 100px;
+          background-color: rgb(228, 228, 228);
+          background-image: url(./images/fav\ \(transparent\)\ white.png);
+          background-size: cover;
+        }
+        h3{
+            font-size: x-large;
+        }
+       input{
+        width: 40%;
+        height: 30px;
+        text-align: center;
+        font-size:larger ;
+       }
+       .input{
+        text-align: center;
+        margin-top: 50px;
+       }
+       #submit:hover{
+background-color: rgb(79, 103, 208);
+       }
+       #submit{
+        margin: 40px 0px 30px 0px;
+        padding: 10px 20px 10px 20px;
+        border-radius: 9px;
+        color: white;
+        font-size: large;
+        background-color: rgb(29, 57, 197);
+       }
+
+    </style>
+</head>
+<body>
+
+    <div id="main_div">
+        
+     <h1 style="font-family: cursive;"> Hay Buddy</h1><hr>
+    
+     <div class="input">
+
+        <h3>Enter Your Id</h3>
+ <input type="text" placeholder="" minlength="4" maxlength="8" name="" id="admin_id"> <br> <br>
+
+    <h3>Enter Your Password</h3>
+  <input type="password" placeholder="" minlength="4" maxlength="8" name="" id="admin_password"><br>
+
+  <button id="submit">Submit</button></div>
+</div>
+
+</body>
+<script>
+let id=document.getElementById("admin_id")
+let password=document.getElementById("admin_password")
+
+let submit=document.getElementById("submit")
+
+let ID="admin"
+let Password="admin"
+submit.addEventListener("click",(e)=>{
+    
+if(id.value==ID&&Password==password.value){
+    alert("Welcome Back Admin")
+window.location.href="./admin.html"
+}else{
+    alert("Something Wrong")
+}
+})
+</script>
+</html>
