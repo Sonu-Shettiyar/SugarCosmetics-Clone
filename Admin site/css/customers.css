@@ -15,3 +15,7 @@ th{
 td{
     text-align: center;
 }
+#sort{
+    border-radius: 9px;
+border: black solid;
+}
