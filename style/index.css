@@ -41,8 +41,8 @@ body{
 
 /*  BestSeller Section  */
 
-#bestSeller{
-    height: 450px;
+#superSavers{
+    height: 550px;
     background-image: url('https://media.sugarcosmetics.com/upload/homePageBackGroundTexture.jpg');
     padding: 23px;
     color: white;
@@ -64,7 +64,7 @@ body{
     display: flex;
     margin: 22px auto;
     width: 1400px;
-    height: 380px;
+    height: 450px;
 }
 
 #bestSeller .cardSection div.button1, #bestSeller .cardSection div.button2{
@@ -79,8 +79,8 @@ body{
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: rgba(0,0,0,0.2);
-    color: white;
+    background-color: white;
+    color: rgb(255, 82, 119);
 }
 
 #bestSeller .cardSection > div > button:hover{
@@ -97,11 +97,13 @@ body{
     justify-content: space-around;
 }
 
+/* Bestseller card css Starting */
+
 #bestSeller .cardSection #cardContainer .card{
     background-color: white;
     color: black;
     width: 280px;
-    height: 380px;
+    height: 450px;
     border-radius: 20px;
 }
 
@@ -112,8 +114,8 @@ body{
 
 
 #bestSeller .cardSection #cardContainer .card .image img{
-    width: 150px;
-    height: 220px;
+    width: 160px;
+    height: 250px;
     border-radius: 20px;
 }
 
@@ -123,7 +125,7 @@ body{
     width: 200px;
     height: 32px;
     overflow: hidden;
-    margin: auto;
+    margin: 12px auto;
 }
 
 #bestSeller .cardSection #cardContainer .card{
@@ -131,7 +133,7 @@ body{
 }
 
 #bestSeller .cardSection #cardContainer .card .buttoncontainer{
-    margin: 32px 0px;
+    margin: 42px 0px;
     margin-bottom: 8px;
     display: flex;
     justify-content: space-around;
@@ -152,4 +154,456 @@ body{
 #bestSeller .cardSection #cardContainer .card .buttoncontainer button:nth-child(2){
     background-color: black;
     color: white;
+    width: 150px;
 }
+
+/* Bestseller card css Ending */
+
+
+/* Hot Deals Section Starting */
+
+#hotDeals{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 24px auto;
+}
+
+.headingForHotDeals{
+    margin: 26px auto;
+    display: flex;
+    align-items: center;
+}
+
+.headingForHotDeals > div{
+    height: 0px;
+    width: 50px;
+    margin: auto 25px;
+    border: 2px solid rgb(255, 82, 119);
+}
+
+.cardContainerForHotDeals{
+    display: flex;
+    width: 98%;
+    margin: 24px auto;
+    justify-content: space-around;
+}
+
+.cardContainerForHotDeals img{
+    width: 455px;
+    height: 310px;
+    border-radius: 14px;
+}
+
+/* Hot Deals Section Ending */
+
+/* Just-In Section Starting  */
+#justIn{
+    height: 550px;
+    padding: 23px;
+    /* color: white; */
+}
+
+#justIn .headingForJustIn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#justIn .headingForJustIn div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#justIn .cardSection{
+    display: flex;
+    margin: 22px auto;
+    width: 1400px;
+    height: 450px;
+}
+
+#justIn .cardSection div.button1, #justIn .cardSection div.button2{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#justIn .cardSection > div > button{
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(255, 82, 119);
+}
+
+#justIn .cardSection > div > button:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+#justIn .cardSection #cardContainer{
+    width: 1300px;
+}
+
+
+#justIn .cardSection #cardContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Bestseller card css Starting */
+
+#justIn .cardSection #cardContainer .card{
+    background-color: white;
+    color: black;
+    width: 280px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+#justIn .cardSection #cardContainer .card .image{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+#justIn .cardSection #cardContainer .card .image img{
+    width: 160px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+#justIn .cardSection #cardContainer .card .body p{
+    text-align: center;
+    font-size: 14px;
+    width: 200px;
+    height: 32px;
+    overflow: hidden;
+    margin: 12px auto;
+}
+
+#justIn .cardSection #cardContainer .card{
+    text-align: center;
+}
+
+#justIn .cardSection #cardContainer .card .buttoncontainer{
+    margin: 42px 0px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#justIn .cardSection #cardContainer .card .buttoncontainer button{
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+/* .wishlist{
+    margin-left: 6px;
+    font-size: 22px;
+} */
+
+
+#justIn .cardSection #cardContainer .card .buttoncontainer button:nth-child(2){
+    background-color: black;
+    color: white;
+    width: 150px;
+}
+
+/* Just-In Section Ending  */
+
+/* Buy Now Pay Later Section Starting  */
+
+#buyNowPayLater{
+    height: 550px;
+    padding: 23px;
+    /* color: white; */
+}
+
+#buyNowPayLater .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buyNowPayLater .heading div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#buyNowPayLater .cardSection{
+    display: flex;
+    margin: 22px auto;
+    width: 1400px;
+    height: 450px;
+}
+
+#buyNowPayLater .cardSection div.button1, #buyNowPayLater .cardSection div.button2{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#buyNowPayLater .cardSection > div > button{
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(255, 82, 119);
+}
+
+#buyNowPayLater .cardSection > div > button:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+#buyNowPayLater .cardSection #cardContainer{
+    width: 1300px;
+}
+
+
+#buyNowPayLater .cardSection #cardContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Bestseller card css Starting */
+
+#buyNowPayLater .cardSection #cardContainer .card{
+    background-color: white;
+    color: black;
+    width: 280px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+#buyNowPayLater .cardSection #cardContainer .card .image{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+#buyNowPayLater .cardSection #cardContainer .card .image img{
+    width: 160px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+#buyNowPayLater .cardSection #cardContainer .card .body p{
+    text-align: center;
+    font-size: 14px;
+    width: 200px;
+    height: 32px;
+    overflow: hidden;
+    margin: 12px auto;
+}
+
+#buyNowPayLater .cardSection #cardContainer .card{
+    text-align: center;
+}
+
+#buyNowPayLater .cardSection #cardContainer .card .buttoncontainer{
+    margin: 42px 0px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#buyNowPayLater .cardSection #cardContainer .card .buttoncontainer button{
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+
+#buyNowPayLater .cardSection #cardContainer .card .buttoncontainer button:nth-child(2){
+    background-color: black;
+    color: white;
+    width: 150px;
+}
+
+/* Buy Now Pay Later Section Ending */
+
+/* Super Savers Section Starting */
+#superSavers{
+    height: 550px;
+    background-image: url('https://media.sugarcosmetics.com/upload/VTOBackgroungTexture.png');
+    padding: 23px;
+    color: white;
+}
+#superSavers .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#superSavers .heading div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#superSavers .cardSection{
+    display: flex;
+    margin: 22px auto;
+    width: 1400px;
+    height: 450px;
+}
+
+#superSavers .cardSection div.button1, #superSavers .cardSection div.button2{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#superSavers .cardSection > div > button{
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(255, 82, 119);
+}
+
+#superSavers .cardSection > div > button:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+#superSavers .cardSection #cardContainer{
+    width: 1300px;
+}
+
+
+#superSavers .cardSection #cardContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Super Savers card css Starting */
+
+#superSavers .cardSection #cardContainer .card{
+    background-color: white;
+    color: black;
+    width: 280px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+#superSavers .cardSection #cardContainer .card .image{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+#superSavers .cardSection #cardContainer .card .image img{
+    width: 160px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+#superSavers .cardSection #cardContainer .card .body p{
+    text-align: center;
+    font-size: 14px;
+    width: 200px;
+    height: 32px;
+    overflow: hidden;
+    margin: 12px auto;
+}
+
+#superSavers .cardSection #cardContainer .card{
+    text-align: center;
+}
+
+#superSavers .cardSection #cardContainer .card .buttoncontainer{
+    margin: 42px 0px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#superSavers .cardSection #cardContainer .card .buttoncontainer button{
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+
+#superSavers .cardSection #cardContainer .card .buttoncontainer button:nth-child(2){
+    background-color: black;
+    color: white;
+    width: 150px;
+}
+
+/* Super Savers Section Ending  */
+
+/* Explore Section Starting  */
+#explore{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 24px auto;
+}
+
+.headingForExplore{
+    margin: 26px auto;
+    display: flex;
+    align-items: center;
+}
+
+.headingForExplore > div{
+    height: 0px;
+    width: 50px;
+    margin: auto 25px;
+    border: 2px solid rgb(255, 82, 119);
+}
+
+.cardContainerForExplore{
+    display: flex;
+    width: 98%;
+    margin-top: 24px;
+    justify-content: space-around;
+    padding-bottom: 36px;
+    border-bottom: 1px solid silver;
+}
+
+.cardContainerForExplore img{
+    width: 355px;
+    height: 205px;
+    border-radius: 14px;
+}
+
+.cardContainerForExplore button{
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    border: none;
+}
+
+.cardContainerForExplore button:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.cardContainerForExplore .prevItems{
+    top: 3570px;
+    left: 50px;
+}
+.cardContainerForExplore .nextItems{
+    top: 3570px;
+    right: 50px;
+}
+/* Explore Section Ending  */

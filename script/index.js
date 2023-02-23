@@ -1,3 +1,4 @@
+let baseUrl = 'https://beautybliss-cosmetics-mock-api.onrender.com';
 // Slideshow 
 
 let imgArray = [
@@ -26,7 +27,8 @@ let count = 1;
 
 
 
-// Bestseller Section 
+// Bestseller Section Starting 
+
 let lipstickUrl = 'https://plain-lamb-school-uniform.cyclic.app/data';
 let containerEl = document.querySelector('#bestSeller .cardSection #cardContainer');
 let nextButton = document.querySelector('#bestSeller .cardSection .button2')
@@ -59,7 +61,7 @@ function renderCard(data){
     containerEl.innerHTML = arr.join('\n');
     let wishbtn = document.querySelector('#bestSeller .cardSection #cardContainer .card .wishlist');
     wishbtn.addEventListener('click', function(evnt){
-        console.log(evnt.target.dataset['id']);
+        // console.log(evnt.target.dataset['id']);
         if(evnt.target.dataset['wish'] == 'false'){
             wishbtn.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
         }else{
@@ -70,6 +72,10 @@ function renderCard(data){
 }
 
 
+
+// BestSeller Section Ending 
+
+// Card Markup 
 function eachcard(data){
     let str = 
     `
@@ -96,3 +102,168 @@ function eachcard(data){
     return str;
 }
 
+
+// Just in Section Starting 
+
+let containerEl2 = document.querySelector('#justIn .cardSection #cardContainer');
+let nextButton2 = document.querySelector('#justIn .cardSection .button2');
+let prevButton2 = document.querySelector('#justIn .cardSection .button1');
+
+
+let foundationPages
+let pgno1 = 1;
+
+nextButton2.addEventListener('click', function(){
+    pgno1++;
+    fetchAndRender2(pgno1%foundationPages);
+})
+prevButton2.addEventListener('click', function(){
+    pgno1--;
+    fetchAndRender2(pgno1%foundationPages);
+})
+
+async function fetchAndRender2(pageNumber=1){
+    let data = await fetch(`${baseUrl}/foundation?_limit=4&_page=${pageNumber}`);
+    foundationPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    data = await data.json();
+    renderCard2(data);
+}
+
+fetchAndRender2();
+
+function renderCard2(data){
+    let arr = data.map((el)=>eachcard(el));
+    containerEl2.innerHTML = arr.join('\n');
+    let wishbtn = document.querySelector('#justIn .cardSection #cardContainer .card .wishlist');
+    wishbtn.addEventListener('click', function(evnt){
+        // console.log(evnt.target.dataset['id']);
+        if(evnt.target.dataset['wish'] == 'false'){
+            wishbtn.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+        }else{
+            wishbtn.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+        }
+    })
+}
+
+// Just in Section Ending 
+
+// Buy Now and Pay Later Section Starting
+
+let containerEl3 = document.querySelector('#buyNowPayLater .cardSection #cardContainer');
+let nextButton3 = document.querySelector('#buyNowPayLater .cardSection .button2');
+let prevButton3 = document.querySelector('#buyNowPayLater .cardSection .button1');
+
+
+let eyesPages
+let pgno2 = 1;
+
+nextButton3.addEventListener('click', function(){
+    pgno2++;
+    fetchAndRender3(pgno2%eyesPages);
+})
+prevButton3.addEventListener('click', function(){
+    pgno2--;
+    fetchAndRender3(pgno2%eyesPages);
+})
+
+async function fetchAndRender3(pageNumber=1){
+    let data = await fetch(`${baseUrl}/eyes?_limit=4&_page=${pageNumber}`);
+    eyesPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    data = await data.json();
+    renderCard3(data);
+}
+
+fetchAndRender3();
+
+function renderCard3(data){
+    let arr = data.map((el)=>eachcard(el));
+    containerEl3.innerHTML = arr.join('\n');
+    let wishbtn = document.querySelector('#buyNowPayLater .cardSection #cardContainer .card .wishlist');
+    wishbtn.addEventListener('click', function(evnt){
+        if(evnt.target.dataset['wish'] == 'false'){
+            wishbtn.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+        }else{
+            wishbtn.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+        }
+    })
+}
+// Buy Now and Pay Later Section Ending 
+
+// Super Savers Section Starting 
+
+let containerEl4 = document.querySelector('#superSavers .cardSection #cardContainer');
+let nextButton4 = document.querySelector('#superSavers .cardSection .button2');
+let prevButton4 = document.querySelector('#superSavers .cardSection .button1');
+
+
+let kitsPages
+let pgno3 = 1;
+
+nextButton4.addEventListener('click', function(){
+    pgno3++;
+    fetchAndRender4(pgno3%kitsPages);
+})
+prevButton4.addEventListener('click', function(){
+    pgno3--;
+    fetchAndRender4(pgno3%kitsPages);
+})
+
+async function fetchAndRender4(pageNumber=1){
+    let data = await fetch(`${baseUrl}/makeupkit?_limit=4&_page=${pageNumber}`);
+    kitsPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    data = await data.json();
+    renderCard4(data);
+}
+
+fetchAndRender4();
+
+function renderCard4(data){
+    let arr = data.map((el)=>eachcard(el));
+    containerEl4.innerHTML = arr.join('\n');
+    let wishbtn = document.querySelector('#superSavers .cardSection #cardContainer .card .wishlist');
+    wishbtn.addEventListener('click', function(evnt){
+        if(evnt.target.dataset['wish'] == 'false'){
+            wishbtn.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+        }else{
+            wishbtn.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+        }
+    })
+}
+
+// Super Savers Section Ending 
+
+// Explore Section Starting 
+let exploreImg = [
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F97722164-55b4-4030-a9f6-0219a9575a24.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F52b4f85e-f9e8-465a-a9a4-6f11e6b407aa.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Fa7b72adf-7e02-45c4-a208-552d46eefc4c.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F88ee8d58-7cc5-450a-953b-aa16ef190d52.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F60bdba27-5962-401b-b03e-2c55baa74bd1.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F259217a4-239d-4103-8bf7-cd2a7e1529c1.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F8e3d35ed-5e1f-4056-b36a-575761e2c995.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F97722164-55b4-4030-a9f6-0219a9575a24.jpg&w=1920&q=75'
+]
+
+let img1 = document.querySelector('.cardContainerForExplore .one');
+let img2 = document.querySelector('.cardContainerForExplore .two');
+let img3 = document.querySelector('.cardContainerForExplore .three');
+let img4 = document.querySelector('.cardContainerForExplore .four');
+let exploreNext = document.querySelector('.cardContainerForExplore .nextItems');
+let explorePrev = document.querySelector('.cardContainerForExplore .prevItems');
+
+img1.src = exploreImg[0];
+img2.src = exploreImg[1];
+img3.src = exploreImg[2];
+img4.src = exploreImg[3];
+exploreNext.addEventListener('click', function(){
+    img1.src = exploreImg[4];
+    img2.src = exploreImg[5];
+    img3.src = exploreImg[6];
+    img4.src = exploreImg[7];
+})
+explorePrev.addEventListener('click', function(){
+    img1.src = exploreImg[0];
+    img2.src = exploreImg[1];
+    img3.src = exploreImg[2];
+    img4.src = exploreImg[3];
+})
