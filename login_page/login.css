@@ -46,7 +46,7 @@ a {
 #image-cont {
     background-image: url(./Login-Image.jpg);
 
-    height: 106vh;
+    height: 116vh;
     width: 40%;
     background-size: cover;
 }
@@ -58,6 +58,7 @@ a {
     /* border: 2px solid blue; */
     /* height: 100vh; */
 }
+
 
 
 
@@ -107,11 +108,17 @@ h3 {
     background-color: rgb(16, 16, 45);
     margin-top: 20px;
     padding: 10px;
-    width: 250px;
+    width: 350px;
+    height: 40px;
     border-bottom: 2px solid rgb(112, 10, 10);
     border: none;
 }
 
+.mob-input:focus::placeholder {
+    position: relative;
+    top: -20px;
+    font-size: 15px;
+}
 
 #input-cont div {
     width: 80%;
@@ -189,5 +196,48 @@ input[type="submit"] {
     bottom: 5px;
     border-top-left-radius: 60px;
     border-bottom-right-radius: 60px;
+
+}
+
+/* -------------------------signUp ------------------- */
+
+#SignUp input {
+    display: block;
+    border: 2px solid red;
+    border: none;
+    border-bottom: 2px solid rgb(112, 10, 10);
+
+    margin: auto;
+    margin-top: 30px;
+}
+
+#signH3 {
+    margin-top: 20%;
+}
+
+
+#or+input[value="Continue with Gmail"] {
+    background-color: rgb(255, 255, 255);
+
+
+    background-image: url(../images/google.com.png);
+    background-size: 23px;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding: 10px 15px 10px 29px;
+    border: none;
+    font-family: sans-serif;
+}
+
+.red {
+    position: relative;
+    top: 19px;
+}
+
+#or h4 {
+
+    position: relative;
+    top: -12px;
+    color: #000000;
 
 }
