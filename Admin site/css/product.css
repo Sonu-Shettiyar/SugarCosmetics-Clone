@@ -1,1 +1,161 @@
 @import url("admin.css");
+
+/* ---------//top//------------ */
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+/* ---------filter---------- */
+.filter{
+    position: absolute;
+    padding: 20px;
+    width: 180px;
+    right: 140px;
+    background-color: white;
+    border-radius: var(--card-border-radious);
+    box-shadow: var(--box-shadow);
+    border: var(--box-border);
+    /* display: none; */
+    z-index: 20;
+}
+/* ------------------------------------- */
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.buttons > button {
+    display: flex;
+}
+
+/* ----------------Table--------------------// */
+.data{
+    /* border-collapse: collapse; */
+    margin: 25px 0;
+    min-width: 100%; 
+    height: calc(100vh - 240px);
+    overflow-y: scroll;
+    border-spacing: 0
+} 
+
+/* --------scroll bar -------- */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+/* .data::-webkit-scrollbar {
+    -webkit-appearance: scrollbartrack-vertical;
+}  */
+/* .head{
+    position: sticky;
+    top: 0;
+} */
+th.sticky-header {
+    position: sticky;
+    top:0;
+    z-index: 10;
+    background-color: white;
+    /* border-top: 1px solid #dddd;
+    border-bottom: 1px solid #dddd; */
+    /* border: 2px solid red; */
+  }
+
+.overflow{
+    height: calc(100vh - 240px);
+    /* //172 */
+    /* height: calc(100vh - 133px); */
+    overflow:auto;
+    /* position:sticky; */
+    /* z-index:-1; */
+    /* color: aqua; */
+}
+.append{
+     /* height: calc(100vh - 20px); */
+     /* 240  */
+     /* overflow: hidden; */
+     /* background-color: aqua; */
+}
+.data th{
+   text-align: left;
+   color: gray;
+   font-size: 14px;
+}
+.data th {
+    padding: 10px 15px;
+    border-top: 1px solid #dddd;
+    border-bottom: 1px solid #dddd;
+}
+.data td {
+    padding: 6px 15px;
+    font-size: 13px ;
+    border-bottom: 1px solid #ddd
+}
+tbody > tr > td > div{
+    display: flex;
+} 
+tbody > tr > td > div img{
+    width: 50px;
+    margin-right: 8px;
+} 
+tbody > tr > td > div span{
+    margin: auto 0;
+}
+/* ........... edit ....... td */
+.edit{
+    text-align: right;
+    cursor: pointer;
+}
+
+/* /// edit & delete box  */
+.edit_box{
+    position: relative;
+    width: 120px;
+    background-color: white;
+    /* display: flex;
+    flex-direction: column; */
+    text-align: center;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+    /* top: 0; */
+    /* margin-top: -20px; */
+    /* top: 315px; */
+    right: -13px;
+    border: var(--box-border);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radious-2);
+    display: none;
+   
+   
+}
+.edit_box button{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  padding: 5px 5px 0 5px ;
+  margin: 3px;
+  border-radius: var(--card-border-radious-1);
+  background-color: white;
+  cursor: pointer;
+}
+.edit_box button:hover{
+ background-color: #ddd;
+}
+.edit_box button > span{
+    margin-right: 8px;
+}
+#delete{
+    color: var(--color-danger);
+}
+#delete > p{
+    color: var(--color-danger);
+}
+.edit_box button p{
+    margin: auto 0;
+}

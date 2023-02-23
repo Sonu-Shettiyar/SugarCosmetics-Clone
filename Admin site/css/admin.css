@@ -21,6 +21,7 @@
     --card-padding: 1.8rem;
     --padding-1: 1.2rem;
 
+    --input-border: 1px solid #ddd;
     --box-border-white: 1px solid rgba(250, 250, 250, 0.876);
     --box-border: 1px solid rgba(248, 241, 241, 0.80);
     --box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 5px;
@@ -262,12 +263,14 @@ textarea {
 /* //-------------------- Info div -------------------------------------// */
 .info {
     padding: 20px 20px 0 20px;
-
+    /* overflow: hidden;
+    height: calc(100vh - 133px); */
 }
 
 .box {
-    overflow: scroll;
-    min-height: calc(100vh - 133px);
+    /* overflow: auto; */
+    /* overflow:hidden; */
+    height: calc(100vh - 133px);
     padding: 20px;
     background-color: white;
 
