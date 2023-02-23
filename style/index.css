@@ -41,7 +41,7 @@ body{
 
 /*  BestSeller Section  */
 
-#superSavers{
+#bestSeller{
     height: 550px;
     background-image: url('https://media.sugarcosmetics.com/upload/homePageBackGroundTexture.jpg');
     padding: 23px;
@@ -599,11 +599,11 @@ body{
 }
 
 .cardContainerForExplore .prevItems{
-    top: 3570px;
+    top: 3664px;
     left: 50px;
 }
 .cardContainerForExplore .nextItems{
-    top: 3570px;
+    top: 3664px;
     right: 50px;
 }
 /* Explore Section Ending  */

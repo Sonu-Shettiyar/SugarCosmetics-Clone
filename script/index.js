@@ -48,7 +48,7 @@ prevButton.addEventListener('click', function(){
 
 
 async function fetchAndRender(pageNumber=1){
-    let data = await fetch(`${lipstickUrl}?_limit=4&_page=${pageNumber}`);
+    let data = await fetch(`${baseUrl}/lipstick?_limit=4&_page=${pageNumber}`);
     lipstickPages = Math.ceil(data.headers.get('X-Total-Count')/4);
     data = await data.json();
     renderCard(data);
@@ -59,15 +59,17 @@ fetchAndRender();
 function renderCard(data){
     let arr = data.map((el)=>eachcard(el));
     containerEl.innerHTML = arr.join('\n');
-    let wishbtn = document.querySelector('#bestSeller .cardSection #cardContainer .card .wishlist');
-    wishbtn.addEventListener('click', function(evnt){
-        // console.log(evnt.target.dataset['id']);
-        if(evnt.target.dataset['wish'] == 'false'){
-            wishbtn.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-        }else{
-            wishbtn.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-
-        }
+    let wishbtn = document.querySelectorAll('#bestSeller .cardSection #cardContainer .card .wishlist');
+    wishbtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(evnt.target.dataset['wish'] == 'false'){
+                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                evnt.target.dataset.wish = 'true';
+            }else{
+                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                evnt.target.dataset.wish = 'false';
+            }
+        })
     })
 }
 
@@ -90,7 +92,7 @@ function eachcard(data){
     <h3>&#8377 ${data.sellingprice}    <del>${data.totalprice}</del> </h3>
     </div>
     <div class='buttoncontainer'>
-    <button class='wishlist'>
+    <button class='wishlist'data-wish='false'>
     <i class="fa-sharp fa-regular fa-heart" data-wish='false' data-id=${data.id}></i>
     </button>
     <button class='addToCart'>
@@ -134,14 +136,17 @@ fetchAndRender2();
 function renderCard2(data){
     let arr = data.map((el)=>eachcard(el));
     containerEl2.innerHTML = arr.join('\n');
-    let wishbtn = document.querySelector('#justIn .cardSection #cardContainer .card .wishlist');
-    wishbtn.addEventListener('click', function(evnt){
-        // console.log(evnt.target.dataset['id']);
-        if(evnt.target.dataset['wish'] == 'false'){
-            wishbtn.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-        }else{
-            wishbtn.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-        }
+    let wishbtn = document.querySelectorAll('#justIn .cardSection #cardContainer .card .wishlist');
+    wishbtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(evnt.target.dataset['wish'] == 'false'){
+                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                evnt.target.dataset.wish = 'true';
+            }else{
+                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                evnt.target.dataset.wish = 'false';
+            }
+        })
     })
 }
 
@@ -178,13 +183,17 @@ fetchAndRender3();
 function renderCard3(data){
     let arr = data.map((el)=>eachcard(el));
     containerEl3.innerHTML = arr.join('\n');
-    let wishbtn = document.querySelector('#buyNowPayLater .cardSection #cardContainer .card .wishlist');
-    wishbtn.addEventListener('click', function(evnt){
-        if(evnt.target.dataset['wish'] == 'false'){
-            wishbtn.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-        }else{
-            wishbtn.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-        }
+    let wishbtn = document.querySelectorAll('#buyNowPayLater .cardSection #cardContainer .card .wishlist');
+    wishbtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(evnt.target.dataset['wish'] == 'false'){
+                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                evnt.target.dataset.wish = 'true';
+            }else{
+                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                evnt.target.dataset.wish = 'false';
+            }
+        })
     })
 }
 // Buy Now and Pay Later Section Ending 
@@ -220,13 +229,17 @@ fetchAndRender4();
 function renderCard4(data){
     let arr = data.map((el)=>eachcard(el));
     containerEl4.innerHTML = arr.join('\n');
-    let wishbtn = document.querySelector('#superSavers .cardSection #cardContainer .card .wishlist');
-    wishbtn.addEventListener('click', function(evnt){
-        if(evnt.target.dataset['wish'] == 'false'){
-            wishbtn.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-        }else{
-            wishbtn.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-        }
+    let wishbtn = document.querySelectorAll('#superSavers .cardSection #cardContainer .card .wishlist');
+    wishbtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(evnt.target.dataset['wish'] == 'false'){
+                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                evnt.target.dataset.wish = 'true';
+            }else{
+                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                evnt.target.dataset.wish = 'false';
+            }
+        })
     })
 }
 
