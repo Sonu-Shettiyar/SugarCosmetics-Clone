@@ -1,0 +1,121 @@
+#route>h4 {
+    color: rgba(128, 128, 128, 0.532);
+    padding: 12px;
+    background-color: white;
+}
+
+#route h4 span {
+    color: #000000e2;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    /* border: 2px solid darkblue; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(225, 231, 236);
+}
+
+#leftBar {
+    width: 26%;
+    border: 2px solid red;
+    position: sticky;
+}
+
+#rightBar {
+    width: 70%;
+    /* border: 12px solid green; */
+}
+
+#CardAppender {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    gap: 40px 170px;
+
+}
+
+#CardAppender div {
+    padding: 22%;
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 18px;
+    padding-bottom: 5%;
+
+    /* border-top-left-radius: 15px; */
+}
+
+
+
+#CardAppender div h5 {
+    /* text-align: center; */
+    padding: 0px;
+    /* display: inline; */
+}
+
+#CardAppender img {
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#CardAppender div div {
+    width: 10%;
+    display: flex;
+}
+
+#CardAppender div div h4 {
+    margin-left: 10px;
+}
+
+#CardAppender div #sonu {
+    background-color: rgb(16, 15, 15);
+    font-size: 18px;
+    color: white;
+    position: absolute;
+    margin-left: 10px;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 20px;
+}
+
+#CardAppender div #heartWish {
+    padding: 10px 13px;
+    border: 2px solid rgba(0, 0, 0, 0.696);
+    margin-left: -10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* -------------------------sort------ */
+#sortDiv,
+#filterDiv {
+    padding: 10px 22px;
+    border-radius: 20px;
+    margin: 20px;
+    background-color: white;
+}
+
+#hiddenDiv input,
+#hiddenDiv,
+#topSort+hr {
+
+    margin-top: 15px;
+}
+
+#hiddenDiv {
+    display: none;
+}
+
+#hiddenDiv input {
+    border: 2px solid black;
+    color: black;
+
+    background-color: black;
+}
+
+#topSort {
+    display: flex;
+    justify-content: space-between;
+}
