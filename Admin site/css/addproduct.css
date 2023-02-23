@@ -1,0 +1,155 @@
+@import url(./admin.css);
+.box{
+    overflow: auto;
+}
+.top{
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.top > button{
+    padding: 10px;
+    margin: 10px;
+    width: 15%;
+    border: 1px solid #ddd;
+    background-color: black;
+    color: white;
+    display: flex;
+    text-align: center;
+    border-radius: var(--card-border-radious-2);
+}
+.top > button > p{
+    color: white;
+}
+.top > h4 {
+    margin: auto 0;
+    align-items: left;
+    display: flex;
+    padding: 3px;
+    cursor: pointer;
+    width: 20%;
+}
+.top > h4:hover{
+    background-color: #ddd;
+}
+.top p{
+    margin: auto 5px; 
+    color: gray;
+    
+}
+/* ----------bottom------------ */
+.bottom{
+    display: grid;
+    grid-template-columns: 60% auto;
+    gap: 15px 20px;
+}
+.bottom > .div1 {
+    padding: 30px;
+    border-radius:var(--card-border-radious) ;
+    border: var(--input-border)
+}
+
+/* ---Details---// */
+.bottom h2{
+   font-size: 18px;
+}
+.div1 > div > div {
+    margin: 20px 0;
+}
+.div1 > div > div input {
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+    border: 1px solid #ddd;
+}
+.categ{
+    display: flex;
+    justify-content: space-between;
+}
+.categ div:nth-child(2){
+    /* background-color: black; */
+    width: 30%;
+    margin-right: 10px;
+}
+.div1 h3 {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.categ select{
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+    border: 1px solid #ddd;
+}
+/* --Description----// */
+
+.div1 textarea{
+    background-color: white;
+    color: black;
+    width: 95%;
+    margin: 10px;
+    border: var(--input-border);
+}
+
+/* ----------div2---------// */
+.div2{
+    display: grid;
+    /* grid-column: auto; */
+    grid-template-rows: 45% auto auto;
+    gap: 10px;
+}
+.div2 > div{
+    padding: 30px;
+    border-radius:var(--card-border-radious) ;
+    border: var(--input-border) 
+}
+.div2 > div div {
+    display: grid;
+    /* gri */
+}
+#img_box {
+    display: block;
+    margin: 0 auto;
+}
+.img_div{
+    
+}
+
+#img_url {
+   /* width: 60%; */
+   padding: 10px;
+   margin: 10px;
+   width: 89%;
+   border: 1px solid #ddd;
+}
+.div2 > div > input{
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+    border: 1px solid #ddd;
+}
+.div2 > div img {
+    width: 70px;
+    margin: 5px 0;
+}
+#upload{
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+    border: 1px solid #ddd;
+    display: block;
+    margin: 0 auto;
+}
+
+/* --- scroll Bar ---- */
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}

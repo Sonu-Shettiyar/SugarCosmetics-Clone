@@ -32,7 +32,7 @@
                 <a href="./admin.html">
                     <span class="material-icons-sharp">
                         dashboard
-                        </span>
+                    </span>
                     <h3>DASHBOARD</h3>
                 </a>
                 <a href="./order.html">
@@ -44,19 +44,19 @@
                 <a href="./customers.html">
                     <span class="material-icons-sharp">
                         person
-                        </span>
+                    </span>
                     <h3>CUSTOMERS</h3>
                 </a>
-                <a href="./product.html"  class="active">
+                <a href="./product.html" class="active">
                     <span class="material-icons-sharp">
                         inventory
-                        </span>
+                    </span>
                     <h3>PRODUCTS</h3>
                 </a>
                 <a href="">
                     <span class="material-icons-sharp">
                         logout
-                        </span>
+                    </span>
                     <h3>LOGOUT</h3>
                 </a>
             </div>
@@ -75,19 +75,89 @@
                                 </span> </button>
                         </div>
                         <p><span class="material-icons-sharp">
-                            account_circle
+                                account_circle
                             </span>Admin</p>
                     </form>
                 </div>
             </div>
             <div class="info">
                 <div class="box">
+                    <div class="top">
+                        <h4>PRODUCTS</h4>
+                        <div>
+                            <div class="filter">
 
-                </div> 
+                                <div>
+                                    <input type="radio" id="A" name="filter" value="eyes">
+                                    <label for="A">eye care product</label><br>
+                                </div>
+                                <div> <input type="radio" id="B" name="filter" value="foundation">
+                                    <label for="B">skin care product</label><br>
+                                </div>
+                                <div> <input type="radio" id="C" name="filter" value="lipstick">
+                                    <label for="C">lipstick</label><br>
+                                </div>
+                                <div> <input type="radio" id="D" name="filter" value="makeupkit">
+                                    <label for="D">makeupkit</label><br>
+                                </div>
+
+
+                                <input id="filter_box" type="submit" value="Submit">
+
+                            </div>
+                            <div class="buttons">
+                                <button>
+                                    <span class="material-icons-sharp">
+                                        filter_alt
+                                    </span>
+                                    <p>Filter</p>
+                                </button>
+                                <button id="Add_product" onclick=`${window.location.href="addproduct.html"}`>
+                                    <span class="material-icons-sharp">
+                                        add
+                                    </span>
+                                    <p>New Product</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div>
+                            <form action="">
+                                <input type="text" placeholder="search">
+                            </form>
+                        </div>
+
+                        <div class="overflow">
+
+                            <table class="data">
+                                <div class="head">
+                                    <thead>
+                                        <tr>
+                                            <th class="sticky-header">Name</th>
+                                            <th class="sticky-header">Type</th>
+                                            <th class="sticky-header">Inventory</th>
+                                            <th class="sticky-header"></th>
+                                        </tr>
+                                    </thead>
+                                </div>
+                           
+                                    <tbody class="append">
+                                       
+                                    </tbody>
+    
+                           
+                            </table>
+
+                        </div>
+                       
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
 </body>
-
+<script src="./script/product.js"></script>
 </html>
+

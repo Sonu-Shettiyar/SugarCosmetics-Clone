@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin dashboard</title>
+    <!-- material icon CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- //stylesheet// -->
+    <link rel="stylesheet" href="./css/editproduct.css">
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="sidebar">
+            <div class="top_sec">
+                <div class="logo">
+                    <img src="./images/fav (transparent) white.png" alt="">
+                    <h3 class="logoname"><img src="./images/Bliss.png" alt=""></h3>
+                </div>
+                <div class="close">
+                    <span>close</span>
+                </div>
+            </div>
+
+            <div class="mid_sec">
+                <a href="./admin.html">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>DASHBOARD</h3>
+                </a>
+                <a href="./order.html">
+                    <span class="material-icons-sharp">
+                        sell
+                    </span>
+                    <h3>ORDERS</h3>
+                </a>
+                <a href="./customers.html">
+                    <span class="material-icons-sharp">
+                        person
+                    </span>
+                    <h3>CUSTOMERS</h3>
+                </a>
+                <a href="./product.html" class="active">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>PRODUCTS</h3>
+                </a>
+                <a href="">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>LOGOUT</h3>
+                </a>
+            </div>
+
+        </div>
+        <div id="main">
+            <div class="navbar">
+                <div>
+                    <form class="search-div" action="">
+                        <div>
+                            <input class="search" type="text" placeholder="Search">
+                            <button><span class="material-icons-sharp">
+                                    search
+                                </span> <span class="text">
+                                    <h4>Search</h4>
+                                </span> </button>
+                        </div>
+                        <p><span class="material-icons-sharp">
+                                account_circle
+                            </span>Admin</p>
+                    </form>
+                </div>
+            </div>
+            <div class="info">
+                <div class="box">
+                    <div class="top">
+                        <h4><span class="material-icons-sharp">
+                                keyboard_backspace
+                            </span>
+                            <p>back to products</p>
+                        </h4>
+                        <button id="Add"><span class="material-icons-sharp">
+                            add
+                            </span><p> Add Product</p></button>
+                    </div>
+                    <div class="bottom">
+                        <div class="div1">
+                            <div>
+                                <h2>
+                                    Details
+                                </h2>
+                                <div>
+                                    <h3>Product Name</h3>
+                                    <input id="title" type="text" placeholder="Title"><br>
+                                    <div class="categ">
+                                        <div>
+                                            <h3>Category</h3>
+                                            <select name="Category" id="category">
+                                                <option value="eye">eye care product</option>
+                                                <option value="foundation">foundation</option>
+                                                <option value="lipstick">lipstick</option>
+                                                <option value="makeupkit">makeupkit</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <h3>Type</h3>
+                                            <select name="Type" id="type">
+                                                <option value="kajal">kajal</option>
+                                                <option value="kohl">kohl</option>
+                                                <option value="eyeliner">eyeliner</option>
+                                                <option value="Matte Eyeliner">Matte Eyeliner</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <h3>Description</h3>
+                                    <!-- <input type="textarea" name="" id="" cols="30" rows="7"> -->
+                                        <textarea name="" id="Description" cols="30" rows="7"></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="div2">
+                             <div>
+                                <h2>Product Image</h2>
+                                <div>
+                                    <img id="img_box" src="" alt="">
+                                    <div class="img_div">
+                                        <input id="img_url" type="text" placeholder="img URL">
+                                        <button id="upload">upload</button>
+                                    </div>
+                                </div>
+                                
+                             </div>
+                             <div>
+                                <h2>Inventory</h2>
+                                <input id="quantity" type="number" placeholder="Inventory">
+                             </div>
+                             <div>
+                                <h2>Pricing</h2>
+                                <input id="totalprice" type="number" placeholder="Pricing">
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="./script/editproduct.js"></script>
+
+</html>
