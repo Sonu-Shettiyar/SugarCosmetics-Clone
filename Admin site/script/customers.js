@@ -1,5 +1,5 @@
 let tbody=document.getElementById("table_body")
-let api="https://bliss-febn.onrender.com/users"
+let api="https://beautybliss-cosmetics-mock-api.onrender.com/users"
 
 let search=document.querySelector(".search")
 let submit=document.getElementById("submit")
@@ -13,7 +13,7 @@ function fapi(api){
 }
 
 
-let sapi="https://bliss-febn.onrender.com/users?q="
+let sapi="https://beautybliss-cosmetics-mock-api.onrender.com/users?q="
 
  submit.addEventListener("click",(e)=>{
     e.preventDefault()
@@ -53,12 +53,12 @@ let sort=document.getElementById("sort")
 
 sort.addEventListener("change",()=>{
 if(sort.value==""){
-    fapi("https://bliss-febn.onrender.com/users")
+    fapi("https://beautybliss-cosmetics-mock-api.onrender.com/users")
 }else{
     if(sort.value=="asc"){
-        fapi("https://bliss-febn.onrender.com/users?_sort=name&_order=asc")
+        fapi("https://beautybliss-cosmetics-mock-api.onrender.com/users?_sort=name&_order=asc")
     }else{
-        fapi("https://bliss-febn.onrender.com/users?_sort=name&_order=desc")
+        fapi("https://beautybliss-cosmetics-mock-api.onrender.com/users?_sort=name&_order=desc")
     }
 }
 })
