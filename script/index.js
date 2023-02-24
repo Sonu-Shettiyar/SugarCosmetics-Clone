@@ -29,7 +29,7 @@ let count = 1;
 
 // Bestseller Section Starting 
 
-let lipstickUrl = 'https://plain-lamb-school-uniform.cyclic.app/data';
+// let lipstickUrl = 'https://plain-lamb-school-uniform.cyclic.app/data';
 let containerEl = document.querySelector('#bestSeller .cardSection #cardContainer');
 let nextButton = document.querySelector('#bestSeller .cardSection .button2')
 let prevButton = document.querySelector('#bestSeller .cardSection .button1')
@@ -198,6 +198,53 @@ function renderCard3(data) {
 }
 // Buy Now and Pay Later Section Ending 
 
+// Gifting Section Starting 
+let containerEl5 = document.querySelector('#gifting .cardSection #cardContainer');
+let nextButton5 = document.querySelector('#gifting .cardSection .button2');
+let prevButton5 = document.querySelector('#gifting .cardSection .button1');
+
+
+let giftPages
+let pgno4 = 1;
+
+nextButton5.addEventListener('click', function(){
+    pgno4++;
+    fetchAndRender5(pgno4%giftPages);
+})
+prevButton5.addEventListener('click', function(){
+    pgno4--;
+    fetchAndRender5(pgno4%giftPages);
+})
+
+async function fetchAndRender5(pageNumber=1){
+    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/data?_limit=4&_page=${pageNumber}`);
+    giftPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    data = await data.json();
+    renderCard5(data);
+}
+
+fetchAndRender5();
+
+function renderCard5(data){
+    let arr = data.map((el)=>eachcard(el));
+    containerEl5.innerHTML = arr.join('\n');
+    let wishbtn = document.querySelectorAll('#gifting .cardSection #cardContainer .card .wishlist');
+    wishbtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(evnt.target.dataset['wish'] == 'false'){
+                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                evnt.target.dataset.wish = 'true';
+            }else{
+                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                evnt.target.dataset.wish = 'false';
+            }
+        })
+    })
+}
+
+
+// Gifting Section Ending 
+
 // Super Savers Section Starting 
 
 let containerEl4 = document.querySelector('#superSavers .cardSection #cardContainer');
@@ -244,6 +291,78 @@ function renderCard4(data) {
 }
 
 // Super Savers Section Ending 
+
+// newLaunches Section Starting 
+let imgArray2 = [
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F0015f35b-4322-49e6-9e04-97362bb14dc4.gif&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F927e5f3e-64c4-4105-b315-0882d6c07f64.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F562fe539-20b1-4239-903e-9a27747b8bf0.gif&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F9e2d8597-51d5-41be-95b0-aac4cc0e9794.gif&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F37471559-27d1-4509-9e31-29d889be7036.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Fcad57234-a923-4191-8f1e-62ced44a02af.gif&w=1920&q=75',
+]
+
+let imgEl2 = document.querySelector('#slideshow2 img');
+imgEl2.src = imgArray2[0];
+
+let count2 = 1;
+
+
+(function loop(){
+    setInterval(()=>{
+        imgEl2.src = imgArray2[count2%imgArray2.length];
+        count2++;
+    }, 3500);
+})();
+// newLaunches Section Ending 
+
+// Merch Section Starting
+
+let containerEl6 = document.querySelector('#merch .cardSection #cardContainer');
+let nextButton6 = document.querySelector('#merch .cardSection .button2');
+let prevButton6 = document.querySelector('#merch .cardSection .button1');
+
+
+let merchPages
+let pgno5 = 1;
+
+nextButton6.addEventListener('click', function(){
+    pgno5++;
+    fetchAndRender6(pgno5%merchPages);
+})
+prevButton6.addEventListener('click', function(){
+    pgno5--;
+    fetchAndRender6(pgno5%merchPages);
+})
+
+async function fetchAndRender6(pageNumber=1){
+    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/merch?_limit=4&_page=${pageNumber}`);
+    merchPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    data = await data.json();
+    renderCard6(data);
+}
+
+fetchAndRender6();
+
+function renderCard6(data){
+    let arr = data.map((el)=>eachcard(el));
+    containerEl6.innerHTML = arr.join('\n');
+    let wishbtn = document.querySelectorAll('#merch .cardSection #cardContainer .card .wishlist');
+    wishbtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(evnt.target.dataset['wish'] == 'false'){
+                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                evnt.target.dataset.wish = 'true';
+            }else{
+                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                evnt.target.dataset.wish = 'false';
+            }
+        })
+    })
+}
+
+
+// Merch Section Ending 
 
 // Explore Section Starting 
 let exploreImg = [
@@ -298,4 +417,7 @@ kkDepart.addEventListener("click", function () {
 LipDepart.addEventListener("click", function () {
     window.location.href = "../product-page_kajal/lipstick.html"
 })
+=======
+
+>>>
 

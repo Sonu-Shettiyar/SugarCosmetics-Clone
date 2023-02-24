@@ -45,7 +45,9 @@ submit.addEventListener("click", () => {
         let data = await res.json();
         console.log(data);
 
-        alert("Successfully Added")
+        alert("Successfully Added");
+
+        window.location.href="addproduct.html"
     }
 
    

@@ -74,7 +74,7 @@
                     <form class="search-div" action="">
                         <div>
                             <input class="search" type="text" placeholder="Search">
-                            <button><span class="material-icons-sharp">
+                            <button id="search_submit"><span class="material-icons-sharp">
                                     search
                                 </span> <span class="text">
                                     <h4>Search</h4>
@@ -102,14 +102,12 @@
                                     <label for="A">Complete</label><br>
                                 </div>
                                 <div> <input type="radio" id="B" name="filter" value="">
-                                    <label for="B">Pending Payment</label><br>
+                                    <label for="B">Pending</label><br>
                                 </div>
                                 <div> <input type="radio" id="C" name="filter" value="">
                                     <label for="C">Processing</label><br>
                                 </div>
-                                <div> <input type="radio" id="D" name="filter" value="">
-                                    <label for="D">On Hold</label><br>
-                                </div>
+                                
                                 <div>
                                     <input type="radio" id="E" name="filter" value="">
                                     <label for="E">Cancelled</label><br>
@@ -119,42 +117,38 @@
                                     <label for="F">Failded</label><br><br>
                                 </div>
 
-                                <input type="submit" value="Submit">
+                                <input id="submit" type="submit" value="Submit">
                             </div>
-                            <button>
-                                <h4>
-                                    <span class="material-icons-sharp">
-                                        filter_alt
-                                    </span>
-                                    filter
-                                </h4>
-                            </button>
+                         
                         </div>
 
                     </div>
                     <div class="bottom">
-                        <th>
-                            <tr>order</tr>
-                            <tr>Date added</tr>
-                            <tr>Customer</tr>
-                            <tr>Fullfillment</tr>
-                            <tr>Payment status</tr>
-                            <tr>Total</tr>
-                        </th>
-                    </div>
-                    <!-- ///////////// APPEND DATA HERE ////////////////////// -->
+                        <table>
+       <thead>
+           <tr id="head">
+        <td>order id</td>
+        <td>Date added</td>
+        <td>Name</td>
+        <td>Payment Mathod</td>
+        <td>Status</td>
+        <td>Total Price</td>
+        <td>Total product</td>
+      </tr>
+       </thead>
+  </div>
+  <!-- - - > - - - - - - > table body < - - - < - - -->
+  <tbody id="tbody">
+    <!-- ///////////// APPEND DATA HERE ////////////////////// -->
 
-                    <!-- create new div inside that put table data td > tr -->
-
-                    <!-- paste javascript in script folder -->
-
+</tbody>
+  </table>
 
 
+<!-- create new div inside that put table data td > tr -->
 
-
-
-
-                    <!-- ///////////// APPEND DATA HERE ////////////////////// -->
+     <!-- paste javascript in script folder -->
+   <!-- ///////////// APPEND DATA HERE ////////////////////// -->
 
                 </div>
             </div>

@@ -255,7 +255,7 @@ body{
     justify-content: space-around;
 }
 
-/* Bestseller card css Starting */
+/* Just in card css Starting */
 
 #justIn .cardSection #cardContainer .card{
     background-color: white;
@@ -303,11 +303,6 @@ body{
     padding: 4px;
 }
 
-/* .wishlist{
-    margin-left: 6px;
-    font-size: 22px;
-} */
-
 
 #justIn .cardSection #cardContainer .card .buttoncontainer button:nth-child(2){
     background-color: black;
@@ -316,6 +311,42 @@ body{
 }
 
 /* Just-In Section Ending  */
+
+/* Top Picks of the Week Section Starting */
+#topPicks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 24px auto;
+}
+
+.headingToppick{
+    margin: 26px auto;
+    display: flex;
+    align-items: center;
+}
+
+.headingToppick > div{
+    height: 0px;
+    width: 50px;
+    margin: auto 25px;
+    border: 2px solid rgb(255, 82, 119);
+}
+
+.cardContainerToppicks{
+    display: flex;
+    width: 98%;
+    margin: 24px auto;
+    justify-content: space-around;
+}
+
+.cardContainerToppicks img{
+    width: 455px;
+    height: 310px;
+    border-radius: 14px;
+}
+/* Top Picks of the Week Section Ending */
 
 /* Buy Now Pay Later Section Starting  */
 
@@ -432,6 +463,141 @@ body{
 
 /* Buy Now Pay Later Section Ending */
 
+/* Gifting Section Starting  */
+
+#gifting{
+    height: 550px;
+    padding: 23px;
+    /* color: white; */
+}
+
+#gifting .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gifting .heading div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#gifting .cardSection{
+    display: flex;
+    margin: 22px auto;
+    width: 1400px;
+    height: 450px;
+}
+
+#gifting .cardSection div.button1, #gifting .cardSection div.button2{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#gifting .cardSection > div > button{
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(255, 82, 119);
+}
+
+#gifting .cardSection > div > button:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+#gifting .cardSection #cardContainer{
+    width: 1300px;
+}
+
+
+#gifting .cardSection #cardContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Bestseller card css Starting */
+
+#gifting .cardSection #cardContainer .card{
+    background-color: white;
+    color: black;
+    width: 280px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+#gifting .cardSection #cardContainer .card .image{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+#gifting .cardSection #cardContainer .card .image img{
+    width: 160px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+#gifting .cardSection #cardContainer .card .body p{
+    text-align: center;
+    font-size: 14px;
+    width: 200px;
+    height: 32px;
+    overflow: hidden;
+    margin: 12px auto;
+}
+
+#gifting .cardSection #cardContainer .card{
+    text-align: center;
+}
+
+#gifting .cardSection #cardContainer .card .buttoncontainer{
+    margin: 42px 0px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#gifting .cardSection #cardContainer .card .buttoncontainer button{
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+
+#gifting .cardSection #cardContainer .card .buttoncontainer button:nth-child(2){
+    background-color: black;
+    color: white;
+    width: 150px;
+}
+
+/* Gifting Section Ending  */
+
+#reference .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0px;
+}
+
+#reference .heading div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#reference img{
+    margin: 32px 75px;
+    border-radius: 14px;
+    width: 90%;
+}
+
 /* Super Savers Section Starting */
 #superSavers{
     height: 550px;
@@ -546,13 +712,211 @@ body{
 
 /* Super Savers Section Ending  */
 
+/* newLaunches Section Starting  */
+#slideshow2{
+    padding: 22px;
+}
+#slideshow2 .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 14px 0px 22px 0px;
+}
+
+#slideshow2 .heading div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#slideshow2 img{
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+    width: 95%;
+}
+/* newLaunches Section Ending  */
+
+/* This or That Section Starting  */
+#thisOrThat{
+    padding: 22px;
+}
+#thisOrThat .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 14px 0px 22px 0px;
+}
+
+#thisOrThat .heading div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#thisOrThat .cardContainer{
+    display: flex;
+    padding: 14px;
+    justify-content: space-around;
+}
+
+#thisOrThat .cardContainer img{
+    border-radius: 10px;
+    width: 48%;
+}
+/* This or That Section Ending */
+/* blissBlog Section Starting */
+
+
+#blissBlog{
+    padding: 22px;
+}
+#blissBlog .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 14px 0px 22px 0px;
+}
+
+#blissBlog .heading div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#blissBlog .cardContainer{
+    display: flex;
+    padding: 14px;
+    justify-content: space-around;
+}
+
+#blissBlog .cardContainer img{
+    border-radius: 10px;
+    width: 30%;
+}
+/* blissBlog Section Ending  */
+/* Merch Section Starting  */
+#merch{
+    height: 520px;
+    padding: 23px;
+}
+#merch .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#merch .heading div{
+    width: 50px;
+    height: 0px;
+    margin: 0px 23px;
+    border: 2px solid  rgb(255, 82, 119);
+}
+
+#merch .cardSection{
+    display: flex;
+    margin: 22px auto;
+    width: 1400px;
+    height: 450px;
+}
+
+#merch .cardSection div.button1, #merch .cardSection div.button2{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#merch .cardSection > div > button{
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(255, 82, 119);
+}
+
+#merch .cardSection > div > button:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+#merch .cardSection #cardContainer{
+    width: 1300px;
+}
+
+
+#merch .cardSection #cardContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* merch card css Starting */
+
+#merch .cardSection #cardContainer .card{
+    background-color: white;
+    color: black;
+    width: 280px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+#merch .cardSection #cardContainer .card .image{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+#merch .cardSection #cardContainer .card .image img{
+    width: 160px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+#merch .cardSection #cardContainer .card .body p{
+    text-align: center;
+    font-size: 14px;
+    width: 200px;
+    height: 32px;
+    overflow: hidden;
+    margin: 12px auto;
+}
+
+#merch .cardSection #cardContainer .card{
+    text-align: center;
+}
+
+#merch .cardSection #cardContainer .card .buttoncontainer{
+    margin: 42px 0px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#merch .cardSection #cardContainer .card .buttoncontainer button{
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+
+#merch .cardSection #cardContainer .card .buttoncontainer button:nth-child(2){
+    background-color: black;
+    color: white;
+    width: 150px;
+}
+/* Merch Section Ending */
+
 /* Explore Section Starting  */
 #explore{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 24px auto;
+    margin-top: 10px;
+    margin-bottom: 24px;
 }
 
 .headingForExplore{
@@ -599,11 +963,11 @@ body{
 }
 
 .cardContainerForExplore .prevItems{
-    top: 3664px;
+    top: 7156px;
     left: 50px;
 }
 .cardContainerForExplore .nextItems{
-    top: 3664px;
+    top: 7156px;
     right: 50px;
 }
 /* Explore Section Ending  */
