@@ -18,9 +18,9 @@ imgEl.src = imgArray[0];
 let count = 1;
 
 
-(function loop(){
-    setInterval(()=>{
-        imgEl.src = imgArray[count%imgArray.length];
+(function loop() {
+    setInterval(() => {
+        imgEl.src = imgArray[count % imgArray.length];
         count++;
     }, 2000);
 })();
@@ -37,35 +37,35 @@ let prevButton = document.querySelector('#bestSeller .cardSection .button1')
 let lipstickPages;
 let pgno = 1;
 
-nextButton.addEventListener('click', function(){
+nextButton.addEventListener('click', function () {
     pgno++;
-    fetchAndRender(pgno%lipstickPages);
+    fetchAndRender(pgno % lipstickPages);
 })
-prevButton.addEventListener('click', function(){
+prevButton.addEventListener('click', function () {
     pgno--;
-    fetchAndRender(pgno%lipstickPages);
+    fetchAndRender(pgno % lipstickPages);
 })
 
 
-async function fetchAndRender(pageNumber=1){
+async function fetchAndRender(pageNumber = 1) {
     let data = await fetch(`${baseUrl}/lipstick?_limit=4&_page=${pageNumber}`);
-    lipstickPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    lipstickPages = Math.ceil(data.headers.get('X-Total-Count') / 4);
     data = await data.json();
     renderCard(data);
 }
 
 fetchAndRender();
 
-function renderCard(data){
-    let arr = data.map((el)=>eachcard(el));
+function renderCard(data) {
+    let arr = data.map((el) => eachcard(el));
     containerEl.innerHTML = arr.join('\n');
     let wishbtn = document.querySelectorAll('#bestSeller .cardSection #cardContainer .card .wishlist');
-    wishbtn.forEach((el)=>{
-        el.addEventListener('click', function(evnt){
-            if(evnt.target.dataset['wish'] == 'false'){
+    wishbtn.forEach((el) => {
+        el.addEventListener('click', function (evnt) {
+            if (evnt.target.dataset['wish'] == 'false') {
                 el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
                 evnt.target.dataset.wish = 'true';
-            }else{
+            } else {
                 el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
                 evnt.target.dataset.wish = 'false';
             }
@@ -78,9 +78,9 @@ function renderCard(data){
 // BestSeller Section Ending 
 
 // Card Markup 
-function eachcard(data){
-    let str = 
-    `
+function eachcard(data) {
+    let str =
+        `
     <div class='card'>
     <div class='image'>
     <img src=${data.image}>
@@ -115,34 +115,34 @@ let prevButton2 = document.querySelector('#justIn .cardSection .button1');
 let foundationPages
 let pgno1 = 1;
 
-nextButton2.addEventListener('click', function(){
+nextButton2.addEventListener('click', function () {
     pgno1++;
-    fetchAndRender2(pgno1%foundationPages);
+    fetchAndRender2(pgno1 % foundationPages);
 })
-prevButton2.addEventListener('click', function(){
+prevButton2.addEventListener('click', function () {
     pgno1--;
-    fetchAndRender2(pgno1%foundationPages);
+    fetchAndRender2(pgno1 % foundationPages);
 })
 
-async function fetchAndRender2(pageNumber=1){
+async function fetchAndRender2(pageNumber = 1) {
     let data = await fetch(`${baseUrl}/foundation?_limit=4&_page=${pageNumber}`);
-    foundationPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    foundationPages = Math.ceil(data.headers.get('X-Total-Count') / 4);
     data = await data.json();
     renderCard2(data);
 }
 
 fetchAndRender2();
 
-function renderCard2(data){
-    let arr = data.map((el)=>eachcard(el));
+function renderCard2(data) {
+    let arr = data.map((el) => eachcard(el));
     containerEl2.innerHTML = arr.join('\n');
     let wishbtn = document.querySelectorAll('#justIn .cardSection #cardContainer .card .wishlist');
-    wishbtn.forEach((el)=>{
-        el.addEventListener('click', function(evnt){
-            if(evnt.target.dataset['wish'] == 'false'){
+    wishbtn.forEach((el) => {
+        el.addEventListener('click', function (evnt) {
+            if (evnt.target.dataset['wish'] == 'false') {
                 el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
                 evnt.target.dataset.wish = 'true';
-            }else{
+            } else {
                 el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
                 evnt.target.dataset.wish = 'false';
             }
@@ -162,34 +162,34 @@ let prevButton3 = document.querySelector('#buyNowPayLater .cardSection .button1'
 let eyesPages
 let pgno2 = 1;
 
-nextButton3.addEventListener('click', function(){
+nextButton3.addEventListener('click', function () {
     pgno2++;
-    fetchAndRender3(pgno2%eyesPages);
+    fetchAndRender3(pgno2 % eyesPages);
 })
-prevButton3.addEventListener('click', function(){
+prevButton3.addEventListener('click', function () {
     pgno2--;
-    fetchAndRender3(pgno2%eyesPages);
+    fetchAndRender3(pgno2 % eyesPages);
 })
 
-async function fetchAndRender3(pageNumber=1){
+async function fetchAndRender3(pageNumber = 1) {
     let data = await fetch(`${baseUrl}/eyes?_limit=4&_page=${pageNumber}`);
-    eyesPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    eyesPages = Math.ceil(data.headers.get('X-Total-Count') / 4);
     data = await data.json();
     renderCard3(data);
 }
 
 fetchAndRender3();
 
-function renderCard3(data){
-    let arr = data.map((el)=>eachcard(el));
+function renderCard3(data) {
+    let arr = data.map((el) => eachcard(el));
     containerEl3.innerHTML = arr.join('\n');
     let wishbtn = document.querySelectorAll('#buyNowPayLater .cardSection #cardContainer .card .wishlist');
-    wishbtn.forEach((el)=>{
-        el.addEventListener('click', function(evnt){
-            if(evnt.target.dataset['wish'] == 'false'){
+    wishbtn.forEach((el) => {
+        el.addEventListener('click', function (evnt) {
+            if (evnt.target.dataset['wish'] == 'false') {
                 el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
                 evnt.target.dataset.wish = 'true';
-            }else{
+            } else {
                 el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
                 evnt.target.dataset.wish = 'false';
             }
@@ -208,34 +208,34 @@ let prevButton4 = document.querySelector('#superSavers .cardSection .button1');
 let kitsPages
 let pgno3 = 1;
 
-nextButton4.addEventListener('click', function(){
+nextButton4.addEventListener('click', function () {
     pgno3++;
-    fetchAndRender4(pgno3%kitsPages);
+    fetchAndRender4(pgno3 % kitsPages);
 })
-prevButton4.addEventListener('click', function(){
+prevButton4.addEventListener('click', function () {
     pgno3--;
-    fetchAndRender4(pgno3%kitsPages);
+    fetchAndRender4(pgno3 % kitsPages);
 })
 
-async function fetchAndRender4(pageNumber=1){
+async function fetchAndRender4(pageNumber = 1) {
     let data = await fetch(`${baseUrl}/makeupkit?_limit=4&_page=${pageNumber}`);
-    kitsPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    kitsPages = Math.ceil(data.headers.get('X-Total-Count') / 4);
     data = await data.json();
     renderCard4(data);
 }
 
 fetchAndRender4();
 
-function renderCard4(data){
-    let arr = data.map((el)=>eachcard(el));
+function renderCard4(data) {
+    let arr = data.map((el) => eachcard(el));
     containerEl4.innerHTML = arr.join('\n');
     let wishbtn = document.querySelectorAll('#superSavers .cardSection #cardContainer .card .wishlist');
-    wishbtn.forEach((el)=>{
-        el.addEventListener('click', function(evnt){
-            if(evnt.target.dataset['wish'] == 'false'){
+    wishbtn.forEach((el) => {
+        el.addEventListener('click', function (evnt) {
+            if (evnt.target.dataset['wish'] == 'false') {
                 el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
                 evnt.target.dataset.wish = 'true';
-            }else{
+            } else {
                 el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
                 evnt.target.dataset.wish = 'false';
             }
@@ -268,15 +268,34 @@ img1.src = exploreImg[0];
 img2.src = exploreImg[1];
 img3.src = exploreImg[2];
 img4.src = exploreImg[3];
-exploreNext.addEventListener('click', function(){
+exploreNext.addEventListener('click', function () {
     img1.src = exploreImg[4];
     img2.src = exploreImg[5];
     img3.src = exploreImg[6];
     img4.src = exploreImg[7];
 })
-explorePrev.addEventListener('click', function(){
+explorePrev.addEventListener('click', function () {
     img1.src = exploreImg[0];
     img2.src = exploreImg[1];
     img3.src = exploreImg[2];
     img4.src = exploreImg[3];
 })
+// ---------------Display-loggedUserName-----------
+// let logName = document.querySelector("#loggedUserName");
+
+// let getData = localStorage.getItem("logger");
+// logName.innerHTML = getData;
+// console.log(getData)
+
+//-------------linking-Page------;
+let kkDepart = document.querySelector("#kohl_kajal");
+let FDepart = document.querySelector("#faces");
+let LipDepart = document.querySelector("#lips_page");
+
+kkDepart.addEventListener("click", function () {
+    window.location.href = "../product-page_kajal/kajal.html"
+})
+LipDepart.addEventListener("click", function () {
+    window.location.href = "../product-page_kajal/lipstick.html"
+})
+

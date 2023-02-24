@@ -1,0 +1,12 @@
+/* ----------- refer to kajal.css for mid content styling--------- */
+#banner {
+    text-align: center;
+    background-image: linear-gradient(red, black);
+    padding: 0px;
+}
+
+#banner>img {
+    width: 78%;
+    margin: auto;
+    /* height: 10%; */
+}
