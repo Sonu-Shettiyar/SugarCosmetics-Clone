@@ -296,3 +296,83 @@ input[type='radio'] {
   input[type='radio']:checked {
     background: #333;
   }
+
+
+
+/* // ------------------ MAIN CSS ---------------------- //
+--------------------------------  MAIN CSS  -----------------------------// */
+#dash_container{
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ margin-top: 10px;
+
+ gap:30px;
+
+
+}
+.dash{
+    padding: 20px;
+    border: var(--input-border);
+    border-radius: var(--card-border-radious);
+}
+.dash:nth-child(4){
+    background-color: var(--color-primary);
+    color: white;
+}
+.dash:nth-child(4) h1{
+    color: white;
+}
+.bottom_admin {
+ display: grid;
+ grid-template-columns: 60% auto;
+ gap: 30px;
+ margin-top: 35px;
+}
+.orders > table{
+    overflow: auto;
+    margin-top: 10px;
+}
+.bottom_admin > div{
+    padding: 10px;
+}
+.bottom_admin > div:nth-child(2){
+    padding: 20px;
+    border-radius: var(--box-border);
+    border: var(--input-border);
+}
+
+/* // -------- table --------  // */
+
+.orders table {
+    width: 100%;
+}
+.orders table th {
+    text-align: left;
+    color: gray;
+    font-size: 14px;
+}
+
+.orders table th {
+    padding: 10px 15px;
+    border-top: 1px solid #dddd;
+    border-bottom: 1px solid #dddd;
+}
+
+.orders table td {
+    padding: 6px 15px;
+    font-size: 13px;
+    border-bottom: 1px solid #ddd;
+    transition: width 0.5s ease;
+}
+/* 
+/------ Scroll bar ----- */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}

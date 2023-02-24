@@ -1,12 +1,13 @@
 @import url("admin.css");
 
 /* ---------//top//------------ */
-.top{
+.top {
     display: flex;
     justify-content: space-between;
 }
+
 /* ---------filter---------- */
-.filter{
+.filter {
     position: absolute;
     padding: 20px;
     width: 180px;
@@ -18,13 +19,16 @@
     display: none;
     z-index: 20;
     transition: 200ms;
+    transition: width 0.5s ease;
 }
-.filter:hover{
-    width: 175px ;
+
+.filter:hover {
+    width: 175px;
     padding: 18px;
     transition: 300ms;
 }
-#filter_box{
+
+#filter_box {
     padding: 10px;
     border: 1px solid #ddd;
     background-color: black;
@@ -37,19 +41,22 @@
     border-radius: var(--card-border-radious-2);
     cursor: pointer;
 }
-#filter_box:hover{
+
+#filter_box:hover {
     background-color: #ddd;
     color: black;
     padding: 9px;
     transition: 100ms;
 }
+
 /* ----- buttons --------- */
-.buttons{
+.buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.buttons > button {
+
+.buttons>button {
     padding: 8px;
     border: 1px solid #ddd;
     background-color: black;
@@ -59,50 +66,67 @@
     border-radius: var(--card-border-radious-2);
     cursor: pointer;
 }
-.buttons > button:hover{
+
+.buttons>button:hover {
     background-color: #ddd;
     color: black;
     padding: 6px;
     transition: 100ms;
 }
-.buttons > button > p{
+
+.buttons>button>p {
     color: white;
     margin: auto 0 auto 5px;
     font-weight: bold;
-    font-size: var(--font-button) ;
+    font-size: var(--font-button);
 }
-.buttons > button > p:hover{
+
+.buttons>button>p:hover {
     color: black;
 }
 
 /* //  ---------  Search ---------  // */
-#search_data{
-  width: 90%;
-  border-bottom: 1px solid #ddd;
-  display: block;
-  padding: 0 10px;
+#search_data {
+    width: 90%;
+    border-bottom: 1px solid #ddd;
+    display: block;
+    padding: 0 10px;
 }
 
 /* ----------------Table--------------------// */
-.data{
+.data {
     /* border-collapse: collapse; */
     margin: 25px 0;
-    min-width: 100%; 
+    min-width: 100%;
     height: calc(100vh - 240px);
     overflow-y: scroll;
     border-spacing: 0
-} 
+}
+
+.data td:nth-child(1) {
+    width: 40%;
+}
+
+.data td:nth-child(2) {
+    width: 25%;
+}
+
+.data td:nth-child(3) {
+    width: 15%;
+}
 
 /* --------scroll bar -------- */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
 }
+
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
+
 /* .data::-webkit-scrollbar {
     -webkit-appearance: scrollbartrack-vertical;
 }  */
@@ -112,74 +136,73 @@
 } */
 th.sticky-header {
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 10;
     background-color: white;
     /* border-top: 1px solid #dddd;
     border-bottom: 1px solid #dddd; */
     /* border: 2px solid red; */
-  }
+}
 
-.overflow{
+.overflow {
     height: calc(100vh - 240px);
     /* //172 */
     /* height: calc(100vh - 133px); */
-    overflow:auto;
+    overflow: auto;
     /* position:sticky; */
     /* z-index:-1; */
     /* color: aqua; */
 }
-.append{
-     /* height: calc(100vh - 20px); */
-     /* 240  */
-     /* overflow: hidden; */
-     /* background-color: aqua; */
+
+.append {
+    /* height: calc(100vh - 20px); */
+    /* 240  */
+    /* overflow: hidden; */
+    /* background-color: aqua; */
 }
-.data th{
-   text-align: left;
-   color: gray;
-   font-size: 14px;
-   transition: 2000ms;
-   transition: 1000ms;
+
+.data th {
+    text-align: left;
+    color: gray;
+    font-size: 14px;
 }
+
 .data th {
     padding: 10px 15px;
     border-top: 1px solid #dddd;
     border-bottom: 1px solid #dddd;
-    transition: 2000ms;
-    transition: 1000ms;
 }
+
 .data td {
     padding: 6px 15px;
-    font-size: 13px ;
+    font-size: 13px;
     border-bottom: 1px solid #ddd;
-    transition: 2000ms;
-    transition: 1000ms;
+    transition: width 0.5s ease;
 }
-tbody > tr > td > div{
+
+tbody>tr>td>div {
     display: flex;
-    transition: 2000ms;
-    transition: 1000ms;
-} 
-tbody > tr > td > div img{
+}
+
+tbody>tr>td>div img {
     width: 50px;
     margin-right: 8px;
     transition: 2000ms;
     transition: 1000ms;
-} 
-tbody > tr > td > div span{
-    margin: auto 0;
-    transition: 2000ms;
-    transition: 1000ms;
 }
+
+tbody>tr>td>div span {
+    margin: auto 0;
+}
+
 /* ........... edit ....... td */
-.edit{
+.edit {
     text-align: right;
     cursor: pointer;
 }
 
 /* /// edit & delete box  */
-.edit_box{
+.edit_box {
     position: relative;
     width: 120px;
     background-color: white;
@@ -193,37 +216,42 @@ tbody > tr > td > div span{
     /* top: 0; */
     /* margin-top: -20px; */
     /* top: 315px; */
-    right: -13px;
+    right: -40px;
     border: var(--box-border);
     box-shadow: var(--box-shadow);
     border-radius: var(--card-border-radious-2);
     display: none;
-    transition: 2000ms;
-    transition: 1000ms;
-   
+    transition: width 0.5s ease;
+
 }
-.edit_box button{
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  padding: 5px 5px 0 5px ;
-  margin: 3px;
-  border-radius: var(--card-border-radious-1);
-  background-color: white;
-  cursor: pointer;
+
+.edit_box button {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    padding: 5px 5px 0 5px;
+    margin: 3px;
+    border-radius: var(--card-border-radious-1);
+    background-color: white;
+    cursor: pointer;
 }
-.edit_box button:hover{
- background-color: #ddd;
+
+.edit_box button:hover {
+    background-color: #ddd;
 }
-.edit_box button > span{
+
+.edit_box button>span {
     margin-right: 8px;
 }
-#delete{
+
+#delete {
     color: var(--color-danger);
 }
-#delete > p{
+
+#delete>p {
     color: var(--color-danger);
 }
-.edit_box button p{
+
+.edit_box button p {
     margin: auto 0;
 }
