@@ -10,22 +10,77 @@
     position: absolute;
     padding: 20px;
     width: 180px;
-    right: 140px;
+    right: 190px;
     background-color: white;
     border-radius: var(--card-border-radious);
     box-shadow: var(--box-shadow);
     border: var(--box-border);
-    /* display: none; */
+    display: none;
     z-index: 20;
+    transition: 200ms;
 }
-/* ------------------------------------- */
+.filter:hover{
+    width: 175px ;
+    padding: 18px;
+    transition: 300ms;
+}
+#filter_box{
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: black;
+    margin: 5px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    display: flex;
+    text-align: center;
+    border-radius: var(--card-border-radious-2);
+    cursor: pointer;
+}
+#filter_box:hover{
+    background-color: #ddd;
+    color: black;
+    padding: 9px;
+    transition: 100ms;
+}
+/* ----- buttons --------- */
 .buttons{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 .buttons > button {
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: black;
+    color: white;
     display: flex;
+    text-align: center;
+    border-radius: var(--card-border-radious-2);
+    cursor: pointer;
+}
+.buttons > button:hover{
+    background-color: #ddd;
+    color: black;
+    padding: 6px;
+    transition: 100ms;
+}
+.buttons > button > p{
+    color: white;
+    margin: auto 0 auto 5px;
+    font-weight: bold;
+    font-size: var(--font-button) ;
+}
+.buttons > button > p:hover{
+    color: black;
+}
+
+/* //  ---------  Search ---------  // */
+#search_data{
+  width: 90%;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  padding: 0 10px;
 }
 
 /* ----------------Table--------------------// */
@@ -84,26 +139,38 @@ th.sticky-header {
    text-align: left;
    color: gray;
    font-size: 14px;
+   transition: 2000ms;
+   transition: 1000ms;
 }
 .data th {
     padding: 10px 15px;
     border-top: 1px solid #dddd;
     border-bottom: 1px solid #dddd;
+    transition: 2000ms;
+    transition: 1000ms;
 }
 .data td {
     padding: 6px 15px;
     font-size: 13px ;
-    border-bottom: 1px solid #ddd
+    border-bottom: 1px solid #ddd;
+    transition: 2000ms;
+    transition: 1000ms;
 }
 tbody > tr > td > div{
     display: flex;
+    transition: 2000ms;
+    transition: 1000ms;
 } 
 tbody > tr > td > div img{
     width: 50px;
     margin-right: 8px;
+    transition: 2000ms;
+    transition: 1000ms;
 } 
 tbody > tr > td > div span{
     margin: auto 0;
+    transition: 2000ms;
+    transition: 1000ms;
 }
 /* ........... edit ....... td */
 .edit{
@@ -131,7 +198,8 @@ tbody > tr > td > div span{
     box-shadow: var(--box-shadow);
     border-radius: var(--card-border-radious-2);
     display: none;
-   
+    transition: 2000ms;
+    transition: 1000ms;
    
 }
 .edit_box button{

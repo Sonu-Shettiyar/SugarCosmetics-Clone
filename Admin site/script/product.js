@@ -4,7 +4,10 @@ let API = `https://beautybliss-cosmetics-mock-api.onrender.com/`
 // // ----------------------------------------------------------------------------------------
 
 let list = document.querySelector(".append");
-
+let search_button = document.querySelector("#search_data");
+let form = document.querySelector("#search_form");
+let filter_button = document.querySelector("#filter_button");
+let filter_div = document.querySelector(".filter");
 
 // let produts_list = ["foundation","makeupkit","eyes","lipstick"]
 let alldata = [];
@@ -28,6 +31,7 @@ filter_box.addEventListener("click", () => {
     let input = document.querySelector('input[name="filter"]:checked').value
     console.log(input);
     filter_Data(input);
+    filter_div.style.display = "none"
 })
 
 
@@ -62,32 +66,11 @@ async function main() {
         //delete functionality
         delete_and_display()
 
+        // Search Product
+        Search();
 
-        let edit_button = document.querySelectorAll("#edit1");
-        for (let buttons of edit_button) {
-            buttons.addEventListener("click", (e) => {
-                let id = e.currentTarget.dataset.id;
-                let category = e.currentTarget.dataset.category;
-                console.log(id, category);
-                if (category == 'Skin care products') {
-                    category = 'foundation'
-                } else if (category == 'Makeup Kits') {
-                    category = 'makeupkit'
-                }
-                else {
-                    category = category.split(' ').join('').toLowerCase();
-                }
-                console.log(id,category);
-                let obj = {
-                    id:id,
-                    category:category
-                }
-                localStorage.setItem("Edit",JSON.stringify(obj));
-
-                window.location.href="editproduct.html"
-            })
-        }
-
+        // edit button on every div
+        edit_button_td();
 
 
 
@@ -108,7 +91,59 @@ document.addEventListener('mouseup', function (e) {
             BOX.style.display = "none";
         }
     }
+   
+     if(!filter_div.contains(e.target)){
+        filter_div.style.display = "none";
+     }
 });
+
+// ------------- edit button on div -------------------- //
+
+function edit_button_td() {
+    let edit_button = document.querySelectorAll("#edit1");
+    for (let buttons of edit_button) {
+        buttons.addEventListener("click", (e) => {
+            let id = e.currentTarget.dataset.id;
+            let category = e.currentTarget.dataset.category;
+            console.log(id, category);
+            if (category == 'Skin care products') {
+                category = 'foundation'
+            } else if (category == 'Makeup Kits') {
+                category = 'makeupkit'
+            }
+            else {
+                category = category.split(' ').join('').toLowerCase();
+            }
+            console.log(id, category);
+            let obj = {
+                id: id,
+                category: category
+            }
+            localStorage.setItem("Edit", JSON.stringify(obj));
+
+            window.location.href = "editproduct.html"
+        })
+    }
+
+
+}
+
+
+//  ------------ Search Product Name ----------------- //
+
+function Search() {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(alldata);
+        console.log(search_button.value)
+
+        let search_data = alldata.filter((element) => {
+            return (element.title.toLowerCase().includes(search_button.value.toLowerCase()))
+        })
+        console.log(search_data);
+        list.innerHTML = display(search_data);
+    })
+}
 
 
 //   ----------- Delete Data (from server)------------ //
@@ -155,6 +190,13 @@ function editBox_div_appear() {
         // console.log(buttons);
     }
 }
+
+//  ------------- Show Filter DIv (Box) ---------------  //
+
+filter_button.addEventListener("click",()=>{
+  filter_div.style.display = "block";
+})
+
 
 
 
