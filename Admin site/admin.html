@@ -12,6 +12,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- //stylesheet// -->
     <link rel="stylesheet" href="./css/admin.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 
 <body>
@@ -84,6 +85,101 @@
             </div>
             <div class="info">
                 <div class="box">
+                    <div class="top">
+                        <h4>DASHBOARD</h4>
+                    </div>
+                    <div class="mid">
+                        <div>
+                            <input id="month_filter" type="month">
+                        </div>
+                        <div id="dash_container">
+                            <div class="dash">
+                                <span class="material-icons-sharp">
+                                    leaderboard
+                                </span>
+                                <div class="data">
+                                    <div>
+                                        <h3>Total Expense</h3>
+                                        <h1>$300</h1>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="dash">
+                                <span class="material-icons-sharp">
+                                    leaderboard
+                                </span>
+                                <div class="data">
+                                    <div>
+                                        <h3>Total Expense</h3>
+                                        <h1>$300</h1>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="dash">
+                                <span class="material-icons-sharp">
+                                    leaderboard
+                                </span>
+                                <div class="data">
+                                    <div>
+                                        <h3>Total Expense</h3>
+                                        <h1>$300</h1>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="dash">
+                                <span class="material-icons-sharp">
+                                    leaderboard
+                                </span>
+                                <div class="data">
+                                    <div>
+                                        <h3>Total Expense</h3>
+                                        <h1>$300</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="bottom_admin">
+                        <div class="chart">
+
+                            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+                        </div>
+                        <div class="orders">
+                            <h4>Recent Orders</h4>
+                            <table>
+                                <thead>
+                                    <th>Product Name</th>
+                                    <th>order ID</th>
+                                    <th>Status</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Hi</td>
+                                        <td>Hi</td>
+                                        <td>Hi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hi</td>
+                                        <td>Hi</td>
+                                        <td>Hi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hi</td>
+                                        <td>Hi</td>
+                                        <td>Hi</td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
 
                 </div>
             </div>
@@ -91,5 +187,6 @@
 
     </div>
 </body>
+<script src="./script/admin.js"></script>
 
 </html>
