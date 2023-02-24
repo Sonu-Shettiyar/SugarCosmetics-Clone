@@ -18,8 +18,9 @@
 
 #leftBar {
     width: 26%;
-    border: 2px solid red;
     position: sticky;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 #rightBar {
@@ -91,31 +92,44 @@
 /* -------------------------sort------ */
 #sortDiv,
 #filterDiv {
-    padding: 10px 22px;
+    padding: 10px;
     border-radius: 20px;
     margin: 20px;
     background-color: white;
 }
 
+#prod-type+hr,
+#filterDiv hr {
+    border: 1px solid rgba(139, 136, 136, 0.107);
+}
+
+#filterDiv .headDiv+hr {
+    border: 1px solid rgba(0, 0, 0, 0.358);
+}
+
+
+
 #hiddenDiv input,
 #hiddenDiv,
-#topSort+hr {
+#typeHidden,
+#typeHidden input,
+.headDiv+hr,
+#prod-type,
+#topSort+hr,
+#filterDiv>hr {
 
     margin-top: 15px;
 }
 
-#hiddenDiv {
+#hiddenDiv,
+#typeHidden {
     display: none;
 }
 
-#hiddenDiv input {
-    border: 2px solid black;
-    color: black;
 
-    background-color: black;
-}
-
-#topSort {
+#topSort,
+.headDiv,
+#prod-type {
     display: flex;
     justify-content: space-between;
 }

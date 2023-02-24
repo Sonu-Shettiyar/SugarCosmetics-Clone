@@ -13,10 +13,9 @@ let lowSort_inp = document.querySelector("#low");
 let ArrowKeyfil = document.querySelector("#upDownKey2");
 let filData;
 let sortdata;
-// ----------------------------------
 window.addEventListener("load", function () {
 
-    fetch(`https://bliss-febn.onrender.com/eyes`)
+    fetch(`https://beautybliss-cosmetics-mock-api.onrender.com/lipstick`)
         .then((res) => {
             return res.json()
         }).then((data) => {
@@ -44,7 +43,7 @@ function fil() {
         event.preventDefault();
         let efilData = filData.filter((ele) => {
 
-            if (event.target.id == ele.type) {
+            if (ele.type.toUpperCase().includes(event.target.value.toUpperCase())) {
                 return true;
             }
         })
@@ -75,7 +74,7 @@ sortForm.addEventListener("click", function (e) {
     if (e.target.value == "relevance") {
 
 
-        fetch(`https://bliss-febn.onrender.com/eyes`)
+        fetch(`https://beautybliss-cosmetics-mock-api.onrender.com/lipstick`)
             .then((res) => {
                 return res.json()
             }).then((data) => {
@@ -85,28 +84,25 @@ sortForm.addEventListener("click", function (e) {
             }).catch((err) => {
                 console.log(err)
             })
-        sortSpan.innerHTML = "Relevance"
-
 
     } else if (e.target.value == "high") {
-        fetch(`https://bliss-febn.onrender.com/eyes?_sort=sellingprice&_order=desc`)
+        fetch(`https://bliss-febn.onrender.com/lipstick?_sort=sellingprice&_order=desc`)
             .then((res) => {
                 return res.json()
             }).then((data) => {
                 console.log(data);
                 renderCard(data)
-                sortSpan.innerHTML = "High to Low"
+
             }).catch((err) => {
                 console.log(err)
             })
     } else if (e.target.value == "low") {
-        fetch(`https://bliss-febn.onrender.com/eyes?_sort=sellingprice&_order=asc`)
+        fetch(`https://beautybliss-cosmetics-mock-api.onrender.com/lipstick?_sort=sellingprice&_order=asc`)
             .then((res) => {
                 return res.json()
             }).then((data) => {
                 console.log(data);
                 renderCard(data)
-                sortSpan.innerHTML = "Low To High"
 
             }).catch((err) => {
                 console.log(err)
@@ -167,7 +163,7 @@ function renderCard(data) {
         CardDiv.append(diver)
     });
 }
-// ------------linking
+// -------------linking
 let kkDepart = document.querySelector("#kohl_kajal");
 let FDepart = document.querySelector("#faces");
 let LipDepart = document.querySelector("#lips_page");
