@@ -71,8 +71,8 @@ header .search button{
 
 header .signup a{
     text-decoration: none;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 80px;
+    margin-right: 10px;
     color: white;
     display: flex;
     font-size: 15px;
@@ -85,10 +85,42 @@ header .signup i{
     margin-right: 5px;
 }
 
+header .cartpage{
+    position: absolute;
+    right: 24px;
+}
+
 header .cartpage a{
     margin: 5px;
     text-decoration: none;
 }
+
+header .logout {
+    display: none;
+}
+
+#displayLogout{
+    display: block;
+}
+
+header .logout input{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 2px;
+    height: 34px;
+    margin-left: 12px;
+    margin-right: 24px;
+    letter-spacing: 1px;
+}
+
+header .logout input:hover{
+    background-color: white;
+    color: black;
+}
+
 
 .nav{
     height: 50px;

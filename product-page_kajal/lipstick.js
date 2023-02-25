@@ -11,23 +11,28 @@ let highSort_inp = document.querySelector("#high");
 let sortForm = document.querySelector("#hiddenDiv");
 let lowSort_inp = document.querySelector("#low");
 let ArrowKeyfil = document.querySelector("#upDownKey2");
+let gameChanger;
 let filData;
 let sortdata;
 window.addEventListener("load", function () {
 
-    fetch(`https://beautybliss-cosmetics-mock-api.onrender.com/lipstick`)
+    fetchAndrender(1)
+})
+
+
+function fetchAndrender(id) {
+    fetch(`https://beautybliss-cosmetics-mock-api.onrender.com/lipstick?_limit=9&_page=${id}`)
         .then((res) => {
             return res.json()
         }).then((data) => {
-            console.log(data);
             renderCard(data)
             filData = data;
             sortdata = data
-
+            gameChanger = id;
         }).catch((err) => {
             console.log(err)
         })
-})
+}
 let Clear = document.querySelector("#clearAll");
 Clear.addEventListener("click", function () {
     window.location.reload();
@@ -50,8 +55,8 @@ function fil() {
 
         renderCard(efilData);
         if (efilData.length == 0) {
-            CardDiv.innerHTML = `<div style="margin:auto;">
-<h1 >Sorry No Products</h1></div>`
+            CardDiv.innerHTML = `<div style="width:550px; margin:auto; margin-top:20px; padding:200px;">
+<h1 style="text-align:center;">Sorry No Products</h1></div>`
         }
         efilData = filData;
     })
@@ -78,7 +83,6 @@ sortForm.addEventListener("click", function (e) {
             .then((res) => {
                 return res.json()
             }).then((data) => {
-                console.log(data);
                 renderCard(data)
 
             }).catch((err) => {
@@ -90,7 +94,6 @@ sortForm.addEventListener("click", function (e) {
             .then((res) => {
                 return res.json()
             }).then((data) => {
-                console.log(data);
                 renderCard(data)
 
             }).catch((err) => {
@@ -101,7 +104,6 @@ sortForm.addEventListener("click", function (e) {
             .then((res) => {
                 return res.json()
             }).then((data) => {
-                console.log(data);
                 renderCard(data)
 
             }).catch((err) => {
@@ -152,14 +154,42 @@ function renderCard(data) {
             }
 
         })
-        add.id = "sonu"
+        add.id = "sonu";
+        add.addEventListener("click", function (event) {
+            let prodObj = {
+                nos: 1,
+                category: ele.category,
+                image: ele.image,
+                quantity: ele.quantity,
+                rating: ele.rating,
+                sellingprice: ele.sellingprice,
+                title: ele.title,
+                totalprice: ele.totalprice,
+                type: ele.type
+            };
+
+            fetch(`https://beautybliss-cosmetics-mock-api.onrender.com/cart`, {
+                method: "POST",
+                body: JSON.stringify(prodObj),
+                headers: {
+                    "Content-type": `application/json`
+                }
+            })
+                .then((res) => {
+                    return res.json()
+                })
+                .then((data) => {
+                    console.log(data)
+                })
+        })
         price.innerText = "₹" + ele.sellingprice;
         if (ele.sellingprice == undefined) {
             price.innerText = "₹" + ele.totalprice;
         } price.innerText = ` ${"₹" + ele.sellingprice}`;
-        wishHeart.id = "heartWish"
+        wishHeart.id = "heartWish";
         priceDiv.append(strikePrice, price)
         diver.append(img, title, priceDiv, wishHeart, add);
+
         CardDiv.append(diver)
     });
 }
@@ -173,4 +203,75 @@ kkDepart.addEventListener("click", function () {
 })
 LipDepart.addEventListener("click", function () {
     window.location.href = "../product-page_kajal/lipstick.html"
+})
+
+
+
+// ----------------pagination
+let btns = document.getElementById("page-btn");
+let btnsInp = document.querySelectorAll(".page-one")
+
+btns.addEventListener("click", function (event) {
+    colorChange();
+    event.target.style = "background-image: linear-gradient(red, black);"
+
+    if (event.target.value == "<<" && 1 < gameChanger) {
+        gameChanger--
+        fetchAndrender(gameChanger)
+
+    } else if (event.target.value == ">>" && 4 > gameChanger) {
+
+        gameChanger++
+        fetchAndrender(gameChanger)
+
+    } else {
+
+        fetchAndrender(event.target.value)
+    }
+})
+
+function colorChange() {
+    btnsInp.forEach((ele) => {
+
+        ele.style = "background-image: linear-gradient(pink);"
+    })
+}
+//---------------search--------
+let searchInp = document.querySelector("#Search-Inp");
+let searchBtn = document.querySelector("#Search-btn");
+
+
+searchBtn.addEventListener("click", function () {
+
+    fetch(`https://beautybliss-cosmetics-mock-api.onrender.com/eyes`)
+        .then((res) => { return res.json() })
+        .then((data) => {
+            let Search_Data = data.filter((ele) => {
+
+                if (ele.type.toUpperCase().includes(searchInp.value.toUpperCase()) == true || ele.category.toUpperCase().includes(searchInp.value.toUpperCase()) == true || ele.title.toUpperCase().includes(searchInp.value.toUpperCase()) == true) {
+                    return true;
+                }
+
+            })
+            renderCard(Search_Data)
+        })
+
+
+// ---------------Display-loggedUserName-----------
+let logName = document.querySelector("#loggedUserName");
+let logbtn = document.querySelector('header .logout');
+
+let getData = localStorage.getItem("logger");
+if(!(getData)){
+    logName.innerHTML = 'Login/Register';
+}else{
+    logName.innerHTML = `Hi ${getData}`;
+    logbtn.setAttribute('id', 'displayLogout');
+}
+
+logbtn.addEventListener('click', function(evnt){
+    evnt.preventDefault();
+    localStorage.setItem('logger', '');
+    window.location.href = 'index.html';
+
 })
