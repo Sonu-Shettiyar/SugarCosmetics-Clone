@@ -548,16 +548,10 @@ explorePrev.addEventListener('click', function () {
 
 
 
-// //-------------linking-Page------;
-// let kkDepart = document.querySelector("#kohl_kajal");
-// let FDepart = document.querySelector("#faces");
-// let LipDepart = document.querySelector("#lips_page");
 
-// kkDepart.addEventListener("click", function () {
-//     window.location.href = "../product-page_kajal/kajal.html"
-// })
-// LipDepart.addEventListener("click", function () {
-//     window.location.href = "../product-page_kajal/lipstick.html"
-// })
+
+
+
+
 
 
