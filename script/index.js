@@ -1,22 +1,22 @@
 let baseUrl = 'https://beautybliss-cosmetics-mock-api.onrender.com';
 
 // ---------------Display-loggedUserName-----------
-let logName = document.querySelector("#loggedUserName");
-let logbtn = document.querySelector('header .logout');
+// let logName = document.querySelector("#loggedUserName");
+// let logbtn = document.querySelector('header .logout');
 
-let getData = localStorage.getItem("logger");
-if(!(getData)){
-    logName.innerHTML = 'Login/Register';
-}else{
-    logName.innerHTML = `Hi ${getData}`;
-    logbtn.setAttribute('id', 'displayLogout');
-}
+let getDt = localStorage.getItem("logger");
+// if(!(getData)){
+//     logName.innerHTML = 'Login/Register';
+// }else{
+//     logName.innerHTML = `Hi ${getData}`;
+//     logbtn.setAttribute('id', 'displayLogout');
+// }
 
-logbtn.addEventListener('click', function(evnt){
-    evnt.preventDefault();
-    localStorage.setItem('logger', null);
-    window.location.href = 'index.html';
-})
+// logbtn.addEventListener('click', function(evnt){
+//     evnt.preventDefault();
+//     localStorage.setItem('logger', null);
+//     window.location.href = 'index.html';
+// })
 // Slideshow 
 
 let imgArray = [
@@ -92,7 +92,7 @@ function renderCard(data) {
     let cartBtn = document.querySelectorAll('#bestSeller .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getData!==null){
+            if(getDt!==null){
                 addLipstick(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -104,22 +104,29 @@ function renderCard(data) {
 async function addLipstick(id){
     let data = await fetch(`${baseUrl}/lipstick/${id}`)
     data = await data.json();
-    console.log(data);
+    // console.log(data);
     addingToCart(data);
 }
 
 // Add to Cart Function 
 
 async function addingToCart(data){
-    let dt = await fetch(`${baseUrl}/cart`,{
-        method: 'POST',
-        body: JSON.stringify({...data, ...{nos:1}}),
-        headers:{
-            'Content-Type': 'application/json'
+    delete data['id'];
+    // console.log(data);
+    try{
+        let dt = await fetch(`${baseUrl}/cart`,{
+            method: 'POST',
+            body: JSON.stringify({...data, ...{nos:1}}),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        });
+        if(dt.ok){
+            // console.log('Added to cart');
+            alert('Added To Cart');
         }
-    });
-    if(dt.ok){
-        console.log('Added to cart');
+    }catch(err){
+        console.log(err);
     }
 }
 
@@ -211,7 +218,7 @@ function renderCard2(data) {
     let cartBtn = document.querySelectorAll('#justIn .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getData!==null){
+            if(getDt!==null){
                 addJustIn(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -223,7 +230,7 @@ function renderCard2(data) {
 async function addJustIn(id){
     let data = await fetch(`${baseUrl}/foundation/${id}`)
     data = await data.json();
-    console.log(data);
+    // console.log(data);
     addingToCart(data);
 }
 
@@ -276,7 +283,7 @@ function renderCard3(data) {
     let cartBtn = document.querySelectorAll('#buyNowPayLater .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getData!==null){
+            if(getDt!==null){
                 addBuyPay(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -288,7 +295,7 @@ function renderCard3(data) {
 async function addBuyPay(id){
     let data = await fetch(`${baseUrl}/eyes/${id}`)
     data = await data.json();
-    console.log(data);
+    // console.log(data);
     addingToCart(data);
 }
 
@@ -339,7 +346,7 @@ function renderCard5(data){
     let cartBtn = document.querySelectorAll('#gifting .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getData!==null){
+            if(getDt!==null){
                 addGifting(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -351,7 +358,7 @@ function renderCard5(data){
 async function addGifting(id){
     let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/data/${id}`)
     data = await data.json();
-    console.log(data);
+    // console.log(data);
     addingToCart(data);
 }
 
@@ -403,7 +410,7 @@ function renderCard4(data) {
     let cartBtn = document.querySelectorAll('#superSavers .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getData!==null){
+            if(getDt!==null){
                 addsuperSavers(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -491,7 +498,7 @@ function renderCard6(data){
     let cartBtn = document.querySelectorAll('#merch .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getData!==null){
+            if(getDt!==null){
                 addMerch(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
