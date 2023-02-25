@@ -206,6 +206,7 @@ LipDepart.addEventListener("click", function () {
 })
 
 
+
 // ----------------pagination
 let btns = document.getElementById("page-btn");
 let btnsInp = document.querySelectorAll(".page-one")
@@ -256,5 +257,21 @@ searchBtn.addEventListener("click", function () {
         })
 
 
+// ---------------Display-loggedUserName-----------
+let logName = document.querySelector("#loggedUserName");
+let logbtn = document.querySelector('header .logout');
+
+let getData = localStorage.getItem("logger");
+if(!(getData)){
+    logName.innerHTML = 'Login/Register';
+}else{
+    logName.innerHTML = `Hi ${getData}`;
+    logbtn.setAttribute('id', 'displayLogout');
+}
+
+logbtn.addEventListener('click', function(evnt){
+    evnt.preventDefault();
+    localStorage.setItem('logger', '');
+    window.location.href = 'index.html';
 
 })

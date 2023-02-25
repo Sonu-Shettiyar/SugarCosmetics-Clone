@@ -201,10 +201,7 @@ function renderCard(data) {
         CardDiv.append(diver)
     });
 }
-// ------------linking
-let kkDepart = document.querySelector("#kohl_kajal");
-let FDepart = document.querySelector("#faces");
-let LipDepart = document.querySelector("#lips_page");
+
 
 kkDepart.addEventListener("click", function () {
     window.location.href = "../product-page_kajal/kajal.html"
@@ -265,3 +262,5 @@ searchBtn.addEventListener("click", function () {
 
 
 })
+
+

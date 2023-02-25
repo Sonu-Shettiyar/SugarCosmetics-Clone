@@ -1,4 +1,22 @@
 let baseUrl = 'https://beautybliss-cosmetics-mock-api.onrender.com';
+
+// ---------------Display-loggedUserName-----------
+let logName = document.querySelector("#loggedUserName");
+let logbtn = document.querySelector('header .logout');
+
+let getData = localStorage.getItem("logger");
+if(!(getData)){
+    logName.innerHTML = 'Login/Register';
+}else{
+    logName.innerHTML = `Hi ${getData}`;
+    logbtn.setAttribute('id', 'displayLogout');
+}
+
+logbtn.addEventListener('click', function(evnt){
+    evnt.preventDefault();
+    localStorage.setItem('logger', null);
+    window.location.href = 'index.html';
+})
 // Slideshow 
 
 let imgArray = [
@@ -29,7 +47,7 @@ let count = 1;
 
 // Bestseller Section Starting 
 
-let lipstickUrl = 'https://plain-lamb-school-uniform.cyclic.app/data';
+// let lipstickUrl = 'https://plain-lamb-school-uniform.cyclic.app/data';
 let containerEl = document.querySelector('#bestSeller .cardSection #cardContainer');
 let nextButton = document.querySelector('#bestSeller .cardSection .button2')
 let prevButton = document.querySelector('#bestSeller .cardSection .button1')
@@ -48,7 +66,7 @@ prevButton.addEventListener('click', function () {
 
 
 async function fetchAndRender(pageNumber = 1) {
-    let data = await fetch(`${baseUrl}/lipstick?_limit=4&_page=${pageNumber}`);
+    let data = await fetch(`https://beautybliss-cosmetics-mock-api.onrender.com/lipstick?_limit=4&_page=${pageNumber}`);
     lipstickPages = Math.ceil(data.headers.get('X-Total-Count') / 4);
     data = await data.json();
     renderCard(data);
@@ -71,9 +89,51 @@ function renderCard(data) {
             }
         })
     })
+    let cartBtn = document.querySelectorAll('#bestSeller .cardSection #cardContainer .card .addToCart');
+    cartBtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(getData!==null){
+                addLipstick(evnt.target.dataset['id']);
+            }else{
+                alert('Login First');
+            }
+        })
+    })
 }
 
+async function addLipstick(id){
+    let data = await fetch(`${baseUrl}/lipstick/${id}`)
+    data = await data.json();
+    console.log(data);
+    addingToCart(data);
+}
 
+// Add to Cart Function 
+
+async function addingToCart(data){
+    let dt = await fetch(`${baseUrl}/cart`,{
+        method: 'POST',
+        body: JSON.stringify({...data, ...{nos:1}}),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    });
+    if(dt.ok){
+        console.log('Added to cart');
+    }
+}
+
+// {
+//     "id": 1,
+//     "title": "Matte As Hell Crayon Lipstick",
+//     "image": "https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F01_d6ffec78-c2b6-4466-8672-233fee0285a8.jpg%3Fv%3D1644394232&w=256&q=75",
+//     "sellingprice": 849,
+//     "rating": 4.8,
+//     "type": "Crayon Lipstick",
+//     "totalprice": 1000,
+//     "category": "Lipstick",
+//     "nos": 1
+//     },
 
 // BestSeller Section Ending 
 
@@ -95,8 +155,8 @@ function eachcard(data) {
     <button class='wishlist'data-wish='false'>
     <i class="fa-sharp fa-regular fa-heart" data-wish='false' data-id=${data.id}></i>
     </button>
-    <button class='addToCart'>
-    <h2> ADD TO BAG</ h2>
+    <button class='addToCart' data-id=${data.id}>
+    ADD TO CART
     </button>
     </div>
     </div>
@@ -148,7 +208,25 @@ function renderCard2(data) {
             }
         })
     })
+    let cartBtn = document.querySelectorAll('#justIn .cardSection #cardContainer .card .addToCart');
+    cartBtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(getData!==null){
+                addJustIn(evnt.target.dataset['id']);
+            }else{
+                alert('Login First');
+            }
+        })
+    })
 }
+
+async function addJustIn(id){
+    let data = await fetch(`${baseUrl}/foundation/${id}`)
+    data = await data.json();
+    console.log(data);
+    addingToCart(data);
+}
+
 
 // Just in Section Ending 
 
@@ -195,8 +273,89 @@ function renderCard3(data) {
             }
         })
     })
+    let cartBtn = document.querySelectorAll('#buyNowPayLater .cardSection #cardContainer .card .addToCart');
+    cartBtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(getData!==null){
+                addBuyPay(evnt.target.dataset['id']);
+            }else{
+                alert('Login First');
+            }
+        })
+    })
 }
+
+async function addBuyPay(id){
+    let data = await fetch(`${baseUrl}/eyes/${id}`)
+    data = await data.json();
+    console.log(data);
+    addingToCart(data);
+}
+
 // Buy Now and Pay Later Section Ending 
+
+// Gifting Section Starting 
+let containerEl5 = document.querySelector('#gifting .cardSection #cardContainer');
+let nextButton5 = document.querySelector('#gifting .cardSection .button2');
+let prevButton5 = document.querySelector('#gifting .cardSection .button1');
+
+
+let giftPages
+let pgno4 = 1;
+
+nextButton5.addEventListener('click', function(){
+    pgno4++;
+    fetchAndRender5(pgno4%giftPages);
+})
+prevButton5.addEventListener('click', function(){
+    pgno4--;
+    fetchAndRender5(pgno4%giftPages);
+})
+
+async function fetchAndRender5(pageNumber=1){
+    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/data?_limit=4&_page=${pageNumber}`);
+    giftPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    data = await data.json();
+    renderCard5(data);
+}
+
+fetchAndRender5();
+
+function renderCard5(data){
+    let arr = data.map((el)=>eachcard(el));
+    containerEl5.innerHTML = arr.join('\n');
+    let wishbtn = document.querySelectorAll('#gifting .cardSection #cardContainer .card .wishlist');
+    wishbtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(evnt.target.dataset['wish'] == 'false'){
+                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                evnt.target.dataset.wish = 'true';
+            }else{
+                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                evnt.target.dataset.wish = 'false';
+            }
+        })
+    })
+    let cartBtn = document.querySelectorAll('#gifting .cardSection #cardContainer .card .addToCart');
+    cartBtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(getData!==null){
+                addGifting(evnt.target.dataset['id']);
+            }else{
+                alert('Login First');
+            }
+        })
+    })
+}
+
+async function addGifting(id){
+    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/data/${id}`)
+    data = await data.json();
+    console.log(data);
+    addingToCart(data);
+}
+
+// Gifting Section Ending 
 
 // Super Savers Section Starting 
 
@@ -241,9 +400,114 @@ function renderCard4(data) {
             }
         })
     })
+    let cartBtn = document.querySelectorAll('#superSavers .cardSection #cardContainer .card .addToCart');
+    cartBtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(getData!==null){
+                addsuperSavers(evnt.target.dataset['id']);
+            }else{
+                alert('Login First');
+            }
+        })
+    })
+}
+
+async function addsuperSavers(id){
+    let data = await fetch(`${baseUrl}/makeupkit/${id}`)
+    data = await data.json();
+    console.log(data);
+    addingToCart(data);
 }
 
 // Super Savers Section Ending 
+
+// newLaunches Section Starting 
+let imgArray2 = [
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F0015f35b-4322-49e6-9e04-97362bb14dc4.gif&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F927e5f3e-64c4-4105-b315-0882d6c07f64.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F562fe539-20b1-4239-903e-9a27747b8bf0.gif&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F9e2d8597-51d5-41be-95b0-aac4cc0e9794.gif&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F37471559-27d1-4509-9e31-29d889be7036.jpg&w=1920&q=75',
+    'https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Fcad57234-a923-4191-8f1e-62ced44a02af.gif&w=1920&q=75',
+]
+
+let imgEl2 = document.querySelector('#slideshow2 img');
+imgEl2.src = imgArray2[0];
+
+let count2 = 1;
+
+
+(function loop(){
+    setInterval(()=>{
+        imgEl2.src = imgArray2[count2%imgArray2.length];
+        count2++;
+    }, 3500);
+})();
+// newLaunches Section Ending 
+
+// Merch Section Starting
+
+let containerEl6 = document.querySelector('#merch .cardSection #cardContainer');
+let nextButton6 = document.querySelector('#merch .cardSection .button2');
+let prevButton6 = document.querySelector('#merch .cardSection .button1');
+
+
+let merchPages
+let pgno5 = 1;
+
+nextButton6.addEventListener('click', function(){
+    pgno5++;
+    fetchAndRender6(pgno5%merchPages);
+})
+prevButton6.addEventListener('click', function(){
+    pgno5--;
+    fetchAndRender6(pgno5%merchPages);
+})
+
+async function fetchAndRender6(pageNumber=1){
+    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/merch?_limit=4&_page=${pageNumber}`);
+    merchPages = Math.ceil(data.headers.get('X-Total-Count')/4);
+    data = await data.json();
+    renderCard6(data);
+}
+
+fetchAndRender6();
+
+function renderCard6(data){
+    let arr = data.map((el)=>eachcard(el));
+    containerEl6.innerHTML = arr.join('\n');
+    let wishbtn = document.querySelectorAll('#merch .cardSection #cardContainer .card .wishlist');
+    wishbtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(evnt.target.dataset['wish'] == 'false'){
+                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                evnt.target.dataset.wish = 'true';
+            }else{
+                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                evnt.target.dataset.wish = 'false';
+            }
+        })
+    })
+    let cartBtn = document.querySelectorAll('#merch .cardSection #cardContainer .card .addToCart');
+    cartBtn.forEach((el)=>{
+        el.addEventListener('click', function(evnt){
+            if(getData!==null){
+                addMerch(evnt.target.dataset['id']);
+            }else{
+                alert('Login First');
+            }
+        })
+    })
+}
+
+async function addMerch(id){
+    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/merch/${id}`)
+    data = await data.json();
+    console.log(data);
+    addingToCart(data);
+}
+
+// Merch Section Ending 
 
 // Explore Section Starting 
 let exploreImg = [
@@ -280,22 +544,20 @@ explorePrev.addEventListener('click', function () {
     img3.src = exploreImg[2];
     img4.src = exploreImg[3];
 })
-// ---------------Display-loggedUserName-----------
-// let logName = document.querySelector("#loggedUserName");
 
-// let getData = localStorage.getItem("logger");
-// logName.innerHTML = getData;
-// console.log(getData)
 
-//-------------linking-Page------;
-let kkDepart = document.querySelector("#kohl_kajal");
-let FDepart = document.querySelector("#faces");
-let LipDepart = document.querySelector("#lips_page");
 
-kkDepart.addEventListener("click", function () {
-    window.location.href = "../product-page_kajal/kajal.html"
-})
-LipDepart.addEventListener("click", function () {
-    window.location.href = "../product-page_kajal/lipstick.html"
-})
+
+// //-------------linking-Page------;
+// let kkDepart = document.querySelector("#kohl_kajal");
+// let FDepart = document.querySelector("#faces");
+// let LipDepart = document.querySelector("#lips_page");
+
+// kkDepart.addEventListener("click", function () {
+//     window.location.href = "../product-page_kajal/kajal.html"
+// })
+// LipDepart.addEventListener("click", function () {
+//     window.location.href = "../product-page_kajal/lipstick.html"
+// })
+
 
