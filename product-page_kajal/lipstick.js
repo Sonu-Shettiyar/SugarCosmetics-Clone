@@ -174,3 +174,21 @@ kkDepart.addEventListener("click", function () {
 LipDepart.addEventListener("click", function () {
     window.location.href = "../product-page_kajal/lipstick.html"
 })
+
+// ---------------Display-loggedUserName-----------
+let logName = document.querySelector("#loggedUserName");
+let logbtn = document.querySelector('header .logout');
+
+let getData = localStorage.getItem("logger");
+if(!(getData)){
+    logName.innerHTML = 'Login/Register';
+}else{
+    logName.innerHTML = `Hi ${getData}`;
+    logbtn.setAttribute('id', 'displayLogout');
+}
+
+logbtn.addEventListener('click', function(evnt){
+    evnt.preventDefault();
+    localStorage.setItem('logger', '');
+    window.location.href = 'index.html';
+})
