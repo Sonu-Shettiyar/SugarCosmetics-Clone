@@ -1,20 +1,20 @@
-// // ---------------Display-loggedUserName-----------
-// let logName = document.querySelector("#loggedUserName");
-// let logbtn = document.querySelector('header .logout');
+// ---------------Display-loggedUserName-----------
+let logName = document.querySelector("#loggedUserName");
+let logbtn = document.querySelector('header .logout');
 
-// let getData = localStorage.getItem("logger");
-// if(getData===''||getData===null){
-//     logName.innerHTML = 'Login/Register';
-// }else{
-//     logName.innerHTML = `Hi ${getData}`;
-//     logbtn.setAttribute('id', 'displayLogout');
-// }
+let getData = localStorage.getItem("logger");
+if(getData===null||getData==='abc'){
+    logName.innerText = 'Login/Register';
+}else if(getData!==null){
+    logName.innerText = `Hi ${getData}`;
+    logbtn.setAttribute('id', 'displayLogout');
+}
 
-// logbtn.addEventListener('click', function(evnt){
-//     evnt.preventDefault();
-//     localStorage.setItem('logger', null);
-//     window.location.href = 'index.html';
-// })
+logbtn.addEventListener('click', function(evnt){
+    evnt.preventDefault();
+    localStorage.setItem('logger', 'abc');
+    window.location.href = '../index.html';
+})
 
 //-------------linking-Page------;
 let kkDepart = document.querySelector("#kohl_kajal");
