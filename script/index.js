@@ -1,7 +1,22 @@
 let baseUrl = 'https://beautybliss-cosmetics-mock-api.onrender.com';
 
+// ---------------Display-loggedUserName-----------
+let logName = document.querySelector("#loggedUserName");
+let logbtn = document.querySelector('header .logout');
 
+let getData = localStorage.getItem("logger");
+if(!(getData)){
+    logName.innerHTML = 'Login/Register';
+}else{
+    logName.innerHTML = `Hi ${getData}`;
+    logbtn.setAttribute('id', 'displayLogout');
+}
 
+logbtn.addEventListener('click', function(evnt){
+    evnt.preventDefault();
+    localStorage.setItem('logger', null);
+    window.location.href = 'index.html';
+})
 // Slideshow 
 
 let imgArray = [
@@ -531,34 +546,18 @@ explorePrev.addEventListener('click', function () {
 })
 
 
-// ---------------Display-loggedUserName-----------
-let logName = document.querySelector("#loggedUserName");
-let logbtn = document.querySelector('header .logout');
 
-let getData = localStorage.getItem("logger");
-if(!(getData)){
-    logName.innerHTML = 'Login/Register';
-}else{
-    logName.innerHTML = `Hi ${getData}`;
-    logbtn.setAttribute('id', 'displayLogout');
-}
 
-logbtn.addEventListener('click', function(evnt){
-    evnt.preventDefault();
-    localStorage.setItem('logger', '');
-    window.location.href = 'index.html';
-})
+// //-------------linking-Page------;
+// let kkDepart = document.querySelector("#kohl_kajal");
+// let FDepart = document.querySelector("#faces");
+// let LipDepart = document.querySelector("#lips_page");
 
-//-------------linking-Page------;
-let kkDepart = document.querySelector("#kohl_kajal");
-let FDepart = document.querySelector("#faces");
-let LipDepart = document.querySelector("#lips_page");
-
-kkDepart.addEventListener("click", function () {
-    window.location.href = "../product-page_kajal/kajal.html"
-})
-LipDepart.addEventListener("click", function () {
-    window.location.href = "../product-page_kajal/lipstick.html"
-})
+// kkDepart.addEventListener("click", function () {
+//     window.location.href = "../product-page_kajal/kajal.html"
+// })
+// LipDepart.addEventListener("click", function () {
+//     window.location.href = "../product-page_kajal/lipstick.html"
+// })
 
 

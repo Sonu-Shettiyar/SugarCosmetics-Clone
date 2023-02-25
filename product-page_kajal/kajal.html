@@ -24,7 +24,9 @@
         </div>
         <header>
             <div class="logo">
-                <img src="../lg.png">
+                <a href="../index.html">
+                    <img src="lg.png">
+                </a>
             </div>
             <div class="search">
                 <input type="text" placeholder='Try "Liquid Lipstick"'>
@@ -35,11 +37,13 @@
                     </svg>Search</button>
             </div>
             <div class="signup">
-                <a href="../login_page/login.html"><i class="fa-solid fa-circle-user"></i>
-                    <h4>Login/Register</h4>
+                <a href="./login_page/login.html"><i class="fa-solid fa-circle-user"></i>
+                    <h4 id="loggedUserName">Login/Register</h4>
                 </a>
             </div>
-
+            <form class="logout">
+                <input type="submit" value="LOGOUT">
+            </form>
             <div class="cartpage">
                 <a href="#">
                     <svg width="18px" height="18px" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"
