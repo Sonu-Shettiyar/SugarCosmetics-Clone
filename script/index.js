@@ -417,7 +417,7 @@ kkDepart.addEventListener("click", function () {
 LipDepart.addEventListener("click", function () {
     window.location.href = "../product-page_kajal/lipstick.html"
 })
-=======
+// =======
 
->>>
+// >>>
 

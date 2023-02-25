@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="./cart.css">
+   <style>
+#main{
+
+    text-align: center;
+margin-top: 8%;
+margin-left: 5%;
+width: 60%;
+padding: 0px 0px 70px 0px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+input{
+margin-left: 5%;
+
+padding: 10px 10px 10px 10px;
+}
+#pic{
+   
+   margin-left: 10%;
+width: 50px;
+}
+#main>div{
+margin-top: 5%;
+}
+#a{
+margin-left: 55px;
+display: flex;
+}
+#Place_ordder{
+    margin: 0px;
+margin-top: 20px;
+background-color: rgb(31, 31, 191);
+color: aliceblue;
+border-radius: 9px;
+font-size: large;
+}
+#Place_Ordder{
+background-color: rgb(255, 255, 255);
+margin: 0px;
+margin-top: 20px;
+}
+#paydiv{
+   margin-left: 0px;
+}
+#paydiv>img{
+
+width: 100%;
+}
+#inpradio{
+    margin-left: 20%;
+}
+
+   </style>
+</head>
+
+<body>
+       <!-- - - nav bar - - -->
+       <div id="nav">
+        <a href="../index.html">
+        <img src="../images/Bliss.png" alt="">
+        </a>
+        <div id="icon">
+
+           <!-- <a href=""><i class="fa-regular fa-heart"></i>  </a> -->
+          
+
+        </div>
+      
+    </div>
+    <!-- - - nav bar - - -->
+
+
+    <div id="box">
+     
+        <div id="main"> 
+            <h1>Enter Delivery Address</h1>  
+
+            <form id="Place_Ordder">
+               
+    <input required type="text"    placeholder="Name"  name="Name" id="Name" />
+    <input required type="email"   placeholder="Email" name="Email" id="Email" /><br><br><br><br>
+    <input required type="text"    placeholder="Address"  name="Address" id="Address"/>
+    <input required type="number"  placeholder="PinCode"  name="PinCode" id="PinCode"/><br><br><br><br>
+    <input required type="number"  placeholder="Mobile Number" name="Mobile" id="Mobile"/>
+    <input required type="text"    placeholder="City" name="City" id="City"/> 
+    
+    <br><br><hr>
+    
+   
+    <input type="submit" value="Payment Now" id="Place_ordder" >
+    <!-- <button >Save Delivery Address</button> -->
+            </form>
+    
+    
+<div id="a">
+
+    <img id="pic" src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/shield_5f9216.png" alt="">
+    <h3>Safe and Secure Payments. Easy returns. 100% Authentic products.</h3></div>
+ 
+        </div>
+        <!-- Price section -->
+        <div id="right">
+            <div>
+            <h2>Price Details</h2></div>
+            <hr>
+    <div id="Price">
+    <p>Price (<span id="totalitem">0</span> item)</p> <h4 id="total_Price_Count"> 00</h4> </div>
+        
+    <div id="Price">
+            <p>Total Discount (<span id="totalite">00</span> item)</p> <h4 id="discount_price">00</h4>  </div>
+               
+    <div id="Price"><p>Shipping</p> <h4 id="shipping">₹ 00</h4></div>
+                   <hr>
+          <div id="Price"><h3>Total</h3> <h4 id="totalPrice">₹ 00</h4></div>
+          <hr>
+
+          <!-- - -  payments section - - -->
+          <div id="paydiv">
+            <img src="data:image/png;base64,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" alt="">
+<br><br><br>
+<div id="inpradio">
+
+       <input type="radio" name="pay" value="UPI" id="UPI"><b>UPI </b>
+       
+        <input type="radio" name="pay" value="CASH" id="CASH"><b>CASH ON </b>
+</div>
+          </div>
+
+    </div>
+    
+     </div>
+    </div>
+
+</body>
+<script src="./user_payment.js" ></script>
+<script src="./cart.js" ></script>
+</html>
