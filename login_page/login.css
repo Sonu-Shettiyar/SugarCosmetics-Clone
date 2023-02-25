@@ -44,7 +44,7 @@ a {
 
 
 #image-cont {
-    background-image: url(./Login-Image.jpg);
+    background-image: url(../images/blackBg.png);
 
     height: 116vh;
     width: 40%;
@@ -240,4 +240,131 @@ input[type="submit"] {
     top: -12px;
     color: #000000;
 
+}
+
+
+/* ------------responsivness------ */
+
+@media screen and (min-width:570px) and (max-width:1000px) {
+
+    .mob-input {
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        background: none;
+        width: 250px;
+        border-bottom: 2px solid rgb(3, 255, 3);
+    }
+
+    #hi {
+        margin-top: 170px;
+        font-size: 110px;
+        font-family: Roboto, sans-serif;
+        margin-bottom: -30px;
+
+        color: rgba(126, 119, 119, 0.336);
+    }
+
+    #input-cont {
+        width: 60%;
+        padding: 5px;
+        text-align: center;
+        /* border: 2px solid blue; */
+        /* height: 100vh; */
+    }
+
+    #x,
+    #top-none {
+        display: none;
+        font-family: monospace;
+        margin-right: 20px;
+    }
+
+    h3 {
+        color: #000000;
+        font-size: 15px;
+
+    }
+
+    div p {
+        font-size: 12px;
+    }
+
+    #block a {
+        color: red;
+        display: none;
+        text-align: right;
+        margin-right: -90px;
+        font-size: small;
+        text-decoration: none;
+    }
+
+    #image-cont {
+        background-image: url(./Login-Image.jpg);
+
+        /* height: 106vh; */
+        width: 40%;
+    }
+}
+
+@media screen and (min-width:350px) and (max-width:570px) {
+
+    .mob-input {
+        margin-top: 20px;
+        padding: 5px;
+        border: none;
+        background: none;
+        width: 150px;
+        border-bottom: 2px solid rgb(3, 255, 3);
+    }
+
+    #hi {
+        margin-top: 170px;
+        font-size: 110px;
+        font-family: Roboto, sans-serif;
+        margin-bottom: -30px;
+
+        color: rgba(126, 119, 119, 0.336);
+    }
+
+    #input-cont {
+        width: 100%;
+        padding: 5px;
+        text-align: center;
+        /* border: 2px solid blue; */
+        /* height: 100vh; */
+    }
+
+    #x,
+    #top-none {
+        display: none;
+        font-family: monospace;
+        margin-right: 20px;
+    }
+
+    h3 {
+        color: #000000;
+        font-size: 15px;
+
+    }
+
+    #block a {
+        color: red;
+        display: none;
+        text-align: right;
+        margin-right: -90px;
+        font-size: small;
+        text-decoration: none;
+    }
+
+    #image-cont img,
+    #image-cont {
+        display: none;
+        /* height: 106vh; */
+        width: 0%;
+    }
+
+    div p {
+        font-size: 12px;
+    }
 }
