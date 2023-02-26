@@ -131,11 +131,14 @@ fetch(`${api}/cart/${currentIdD}`,{
 
 function displaydata(image,title,totalprice,sellingprice,id,nos){
   
+    if(nos==undefined){
+        nos = 1;
+    }
     if(totalprice!=undefined){
-        c+=(+totalprice*nos)
+        c+=(+totalprice*Number(nos))
     }
     if(sellingprice!=undefined){
-        c1+=(+sellingprice*nos)
+        c1+=(+sellingprice*Number(nos))
     } 
      if(image!=undefined){
 
