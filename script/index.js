@@ -80,7 +80,7 @@ function renderCard(data) {
     let cartBtn = document.querySelectorAll('#bestSeller .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getDt!==null){
+            if(getDt!==null && getDt!=='abc'){
                 addLipstick(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -196,7 +196,7 @@ function renderCard2(data) {
     let cartBtn = document.querySelectorAll('#justIn .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getDt!==null){
+            if(getDt!==null && getDt!=='abc'){
                 addJustIn(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -264,7 +264,7 @@ function renderCard3(data) {
     let cartBtn = document.querySelectorAll('#buyNowPayLater .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getDt!==null){
+            if(getDt!==null && getDt!=='abc'){
                 addBuyPay(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -330,7 +330,7 @@ function renderCard5(data){
     let cartBtn = document.querySelectorAll('#gifting .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getDt!==null){
+            if(getDt!==null && getDt!=='abc'){
                 addGifting(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -397,7 +397,7 @@ function renderCard4(data) {
     let cartBtn = document.querySelectorAll('#superSavers .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getDt!==null){
+            if(getDt!==null && getDt!=='abc'){
                 addsuperSavers(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
@@ -488,7 +488,7 @@ function renderCard6(data){
     let cartBtn = document.querySelectorAll('#merch .cardSection #cardContainer .card .addToCart');
     cartBtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(getDt!==null){
+            if(getDt!==null && getDt!=='abc'){
                 addMerch(evnt.target.dataset['id']);
             }else{
                 alert('Login First');
