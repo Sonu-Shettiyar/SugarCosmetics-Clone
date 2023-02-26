@@ -303,6 +303,7 @@ async function delete_data(path, id) {
 
 
 
+
 //   -------------- TEST on Delete data ------------
 
 // let api = "https://63f44c752213ed989c400d71.mockapi.io/makeup_kit/";

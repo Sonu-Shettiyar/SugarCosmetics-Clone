@@ -541,5 +541,3 @@ explorePrev.addEventListener('click', function () {
     img4.src = exploreImg[3];
 })
 
-
-

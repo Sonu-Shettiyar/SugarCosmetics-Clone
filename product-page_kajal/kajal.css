@@ -43,8 +43,12 @@
     background-color: rgb(255, 255, 255);
     border-radius: 18px;
     padding-bottom: 5%;
-
     /* border-top-left-radius: 15px; */
+}
+
+#CardAppender div:first-child {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
 }
 
 
@@ -132,4 +136,90 @@
 #prod-type {
     display: flex;
     justify-content: space-between;
+}
+
+/* ----------paginatin Btns-------- */
+#page-btn {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 30px;
+}
+
+#page-btn input {
+    margin: auto;
+    width: 60px;
+    border: none;
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+.page-one {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+}
+
+#rightBar #page-btn input:first-child {
+    background-image: radial-gradient(rgb(255, 0, 0));
+}
+
+#arrow {
+    background-image: linear-gradient(rgb(52, 47, 47), rgb(89, 18, 18));
+    border-bottom-left-radius: 800px;
+    border-top-left-radius: 500px;
+}
+
+#arrow:last-child {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 800px;
+    border-top-right-radius: 500px;
+}
+
+@media screen and (min-width:860px) and (max-width:1320px) {
+
+    #CardAppender {
+        display: grid;
+        grid-template-columns: repeat(2, 195px);
+        gap: 40px 170px;
+
+    }
+
+    .search,
+    #Search-Inp,
+    #Search-btn,
+    .discountSection h4,
+    .discountSection img,
+    .signup h4,
+    .cartpage,
+    .nav,
+    #page-btn {
+        display: none;
+    }
+
+
+
+}
+
+@media screen and (min-width:500px) and (max-width:859px) {
+
+    #CardAppender {
+        display: grid;
+        grid-template-columns: repeat(1, 120px);
+        gap: 40px 170px;
+
+    }
+
+    .search,
+    #Search-Inp,
+    #Search-btn,
+    .discountSection h4,
+    .discountSection img,
+    .signup h4,
+    .cartpage,
+    .nav {
+        display: none;
+    }
 }
