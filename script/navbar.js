@@ -20,6 +20,9 @@ logbtn.addEventListener('click', function(evnt){
 let kkDepart = document.querySelector("#kohl_kajal");
 let FDepart = document.querySelector("#faces");
 let LipDepart = document.querySelector("#lips_page");
+kkDepart.style.cursor = 'pointer'
+FDepart.style.cursor = 'pointer'
+LipDepart.style.cursor = 'pointer'
 
 kkDepart.addEventListener("click", function () {
     window.location.href = "../product-page_kajal/kajal.html"

@@ -147,6 +147,7 @@ header .logout input:hover{
 }
 
 .lips{
+    z-index: 2;
     display: none;
     position: absolute;
     line-height: 22px;
@@ -164,6 +165,7 @@ header .logout input:hover{
 }
 
 .eyes{
+    z-index: 2;
     display: none;
     width: 650px;
     flex-wrap: wrap;
@@ -185,6 +187,7 @@ header .logout input:hover{
 
 
 .faces{
+    z-index: 2;
     display: none;
     width: 920px;
     flex-wrap: wrap;
@@ -205,6 +208,7 @@ header .logout input:hover{
 }
 
 .skincare{
+    z-index: 2;
     display: none;
     width: 820px;
     flex-wrap: wrap;
@@ -225,6 +229,7 @@ header .logout input:hover{
 }
 
 .accessories{
+    z-index: 2;
     display: none;
     width: 150px;
     flex-wrap: wrap;
@@ -245,6 +250,7 @@ header .logout input:hover{
 }
 
 .gifting{
+    z-index: 2;
     display: none;
     width: 730px;
     flex-wrap: wrap;
@@ -266,6 +272,7 @@ header .logout input:hover{
 
 
 .blog{
+    z-index: 2;
     display: none;
     width: 730px;
     flex-wrap: wrap;
