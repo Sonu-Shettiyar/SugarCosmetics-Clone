@@ -26,7 +26,7 @@ fetch(`${api}/cart`)
     l=data.length
 c=0
 c1=0
-let p=`<div >${data.map(element => displaydata(element.image,element.title,element.totalprice,element.sellingprice,element.id)).join(" ")}</div>`
+let p=`<div >${data.map(element => displaydata(element.image,element.title,element.totalprice,element.sellingprice,element.id,element.nos)).join(" ")}</div>`
     
 main.innerHTML=p
 
@@ -55,30 +55,87 @@ editLinkD.addEventListener("click", (e) => {
 //-- -- --increment, decrement product count-- -- --
 let increment=document.querySelectorAll("#increment")
 let decrement=document.querySelectorAll("#decrement")
+
 //increment--
 for (let increment1 of increment) {
-increment1.addEventListener("click",()=>{
-console.log("increment")
+increment1.addEventListener("click",(e)=>{
+    e.preventDefault()
+    let currentIdD = e.target.dataset.id;
+let s
 
+yyy.forEach(element => {
+   if( element.id==currentIdD){
+s=element.nos
+
+   }
+});
+
+let obj={
+   
+    "nos":(s+1)
+}
+fetch(`${api}/cart/${currentIdD}`,{
+    method:"PATCH",
+    body:JSON.stringify(obj),
+    headers:{
+     'content-type': 'application/json'
+    }
+})
+.then((req)=>req.json())
+
+.then((data)=>{
+    mainfunction()
+   
+})
 })
 }
 //decrement--
 for (let decrement1 of decrement) {
-decrement1.addEventListener("click",()=>{
-    console.log("decrement")
-    
-})
+decrement1.addEventListener("click",(e)=>{
+    e.preventDefault()
+    let currentIdD = e.target.dataset.id;
+let s
+
+yyy.forEach(element => {
+   if( element.id==currentIdD){
+s=element.nos
+
+   }
+});
+if(s>1){
+
+
+let obj={
+   
+    "nos":(s-1)
 }
+fetch(`${api}/cart/${currentIdD}`,{
+    method:"PATCH",
+    body:JSON.stringify(obj),
+    headers:{
+     'content-type': 'application/json'
+    }
+})
+.then((req)=>req.json())
+
+.then((data)=>{
+    mainfunction()
+   
+})
+} 
 })
 }
 
-function displaydata(image,title,totalprice,sellingprice,id){
+})
+}
+
+function displaydata(image,title,totalprice,sellingprice,id,nos){
   
     if(totalprice!=undefined){
-        c+=(+totalprice)
+        c+=(+totalprice*nos)
     }
     if(sellingprice!=undefined){
-        c1+=(+sellingprice)
+        c1+=(+sellingprice*nos)
     } 
      if(image!=undefined){
 
@@ -86,17 +143,18 @@ function displaydata(image,title,totalprice,sellingprice,id){
     <div id="product_img"> 
      <img src="${image}" alt="">
     </div>
-     <div id="">
+     <div id="name_product">
      <h4>${title}</h4>
      <div id="product_price">
      <p id="totalprice">₹${totalprice}</p>
+   
      <b><p>₹${sellingprice}</p></b>
     </div>
     </div>
     <div id="count">
-        <button id="increment">+</button>
-     <span >1</span>
-        <button id="decrement">-</button>
+        <button id="increment" data-id=${id}>+</button>
+     <span id="sp">${nos}</span>
+        <button id="decrement" data-id=${id}>-</button>
 </div>
 <i id="delete" data-id=${id} class="fa-solid fa-trash-can"></i>
 </div> 
@@ -104,6 +162,7 @@ function displaydata(image,title,totalprice,sellingprice,id){
     //price section
     total_Price_Count.innerHTML='₹ '+c
     discount_price.innerHTML='₹ '+(c-c1)
+
     if(c1>=4000){
       shipping.innerHTML='₹ '+0
       totalPrice.innerHTML='₹ '+(c1) 
