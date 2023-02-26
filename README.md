@@ -62,6 +62,6 @@ We worked on cloning a Cosmetic website and named it as BeautyBliss. This websit
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@linkdin_handle](https://www.linkedin.com/in/sonu-shettiyar-071965228/) - sonubadmash003@gmail.com
+Team Members Name - [@linkdin_handle](https://www.linkedin.com/in/sonu-shettiyar-071965228/) - sonubadmash003@gmail.com
 
 Project Link: [https://github.com/Sonu-Shettiyar/bright-stamp-7114](https://gleeful-lily-870fcb.netlify.app/)
