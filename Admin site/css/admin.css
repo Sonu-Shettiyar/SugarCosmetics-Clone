@@ -180,7 +180,7 @@ p {
     content: "";
     width: 4px;
     height: 100%;
-    background-color: var(--color-alert);
+    background-color: var(--color-secondary);
 }
 
 .mid_sec a.active {
@@ -203,7 +203,7 @@ p {
     width: 4px;
     height: 100%;
     transform: translateX(0);
-    background-color: var(--color-alert);
+    background-color: var(--color-secondary);
 }
 
 /* // ------------------ main section -----------------------------------------// */
@@ -342,7 +342,10 @@ input[type='radio'] {
 }
 
 /* // -------- table --------  // */
-
+.orders {
+    height: 300px;
+    overflow: hidden;
+}
 .orders table {
     width: 100%;
 }

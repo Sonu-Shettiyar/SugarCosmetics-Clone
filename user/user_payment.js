@@ -5,10 +5,22 @@ let PinCode =document.getElementById("PinCode")
 let Mobile =document.getElementById("Mobile")
 let City =document.getElementById("City")
 
+// -- Added by Tejas ---------
+
+let getDt = localStorage.getItem("logger");
+console.log(getDt);
+Name.value = getDt;
+
+// -----------------------------------------------------------------
 
 let Place_Ordder=document.getElementById("Place_Ordder")
 
 Place_Ordder.addEventListener("submit",(e)=>{
+
+// ------------------- added by tejas -------
+ 
+// ---------------------------------------------
+
     e.preventDefault()
   //users details
     let obj={
@@ -87,7 +99,7 @@ setTimeout(() => {
    alert("Paymant Done") 
 
 //---enter the user order page name --------------------------------
-window.location.href="./"
+window.location.href="../order_page/order.html"
 }, 3000);
 
 })
