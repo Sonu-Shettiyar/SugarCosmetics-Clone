@@ -34,7 +34,7 @@ We worked on cloning a Cosmetic website and named it as BeautyBliss. This websit
 -SignUp / LoginPage
 ![Screenshot (944)](https://user-images.githubusercontent.com/119413823/221427852-3b7b0c97-8440-4bed-a1bc-0dc79efd784b.png)
 
--Landing Page
+
 ![Screenshot (943)](https://user-images.githubusercontent.com/119413823/221427855-379acab4-4bb9-477f-831f-648a4c574714.png)
 
 - Cards with Sliding pagination
