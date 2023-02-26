@@ -1,22 +1,7 @@
 let baseUrl = 'https://beautybliss-cosmetics-mock-api.onrender.com';
 
-// ---------------Display-loggedUserName-----------
-// let logName = document.querySelector("#loggedUserName");
-// let logbtn = document.querySelector('header .logout');
 
 let getDt = localStorage.getItem("logger");
-// if(!(getData)){
-//     logName.innerHTML = 'Login/Register';
-// }else{
-//     logName.innerHTML = `Hi ${getData}`;
-//     logbtn.setAttribute('id', 'displayLogout');
-// }
-
-// logbtn.addEventListener('click', function(evnt){
-//     evnt.preventDefault();
-//     localStorage.setItem('logger', null);
-//     window.location.href = 'index.html';
-// })
 // Slideshow 
 
 let imgArray = [
@@ -47,7 +32,6 @@ let count = 1;
 
 // Bestseller Section Starting 
 
-// let lipstickUrl = 'https://plain-lamb-school-uniform.cyclic.app/data';
 let containerEl = document.querySelector('#bestSeller .cardSection #cardContainer');
 let nextButton = document.querySelector('#bestSeller .cardSection .button2')
 let prevButton = document.querySelector('#bestSeller .cardSection .button1')
@@ -80,12 +64,16 @@ function renderCard(data) {
     let wishbtn = document.querySelectorAll('#bestSeller .cardSection #cardContainer .card .wishlist');
     wishbtn.forEach((el) => {
         el.addEventListener('click', function (evnt) {
-            if (evnt.target.dataset['wish'] == 'false') {
-                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-                evnt.target.dataset.wish = 'true';
-            } else {
-                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-                evnt.target.dataset.wish = 'false';
+            if(getDt!==null && getDt!=='abc'){
+                if(evnt.target.dataset['wish'] == 'false'){
+                    el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                    evnt.target.dataset.wish = 'true';
+                }else{
+                    el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                    evnt.target.dataset.wish = 'false';
+                }
+            }else{
+                alert('Login First');
             }
         })
     })
@@ -104,7 +92,6 @@ function renderCard(data) {
 async function addLipstick(id){
     let data = await fetch(`${baseUrl}/lipstick/${id}`)
     data = await data.json();
-    // console.log(data);
     addingToCart(data);
 }
 
@@ -112,7 +99,6 @@ async function addLipstick(id){
 
 async function addingToCart(data){
     delete data['id'];
-    // console.log(data);
     try{
         let dt = await fetch(`${baseUrl}/cart`,{
             method: 'POST',
@@ -122,7 +108,6 @@ async function addingToCart(data){
             }
         });
         if(dt.ok){
-            // console.log('Added to cart');
             alert('Added To Cart');
         }
     }catch(err){
@@ -130,17 +115,6 @@ async function addingToCart(data){
     }
 }
 
-// {
-//     "id": 1,
-//     "title": "Matte As Hell Crayon Lipstick",
-//     "image": "https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F01_d6ffec78-c2b6-4466-8672-233fee0285a8.jpg%3Fv%3D1644394232&w=256&q=75",
-//     "sellingprice": 849,
-//     "rating": 4.8,
-//     "type": "Crayon Lipstick",
-//     "totalprice": 1000,
-//     "category": "Lipstick",
-//     "nos": 1
-//     },
 
 // BestSeller Section Ending 
 
@@ -206,12 +180,16 @@ function renderCard2(data) {
     let wishbtn = document.querySelectorAll('#justIn .cardSection #cardContainer .card .wishlist');
     wishbtn.forEach((el) => {
         el.addEventListener('click', function (evnt) {
-            if (evnt.target.dataset['wish'] == 'false') {
-                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-                evnt.target.dataset.wish = 'true';
-            } else {
-                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-                evnt.target.dataset.wish = 'false';
+            if(getDt!==null && getDt!=='abc'){
+                if(evnt.target.dataset['wish'] == 'false'){
+                    el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                    evnt.target.dataset.wish = 'true';
+                }else{
+                    el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                    evnt.target.dataset.wish = 'false';
+                }
+            }else{
+                alert('Login First');
             }
         })
     })
@@ -230,7 +208,6 @@ function renderCard2(data) {
 async function addJustIn(id){
     let data = await fetch(`${baseUrl}/foundation/${id}`)
     data = await data.json();
-    // console.log(data);
     addingToCart(data);
 }
 
@@ -271,12 +248,16 @@ function renderCard3(data) {
     let wishbtn = document.querySelectorAll('#buyNowPayLater .cardSection #cardContainer .card .wishlist');
     wishbtn.forEach((el) => {
         el.addEventListener('click', function (evnt) {
-            if (evnt.target.dataset['wish'] == 'false') {
-                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-                evnt.target.dataset.wish = 'true';
-            } else {
-                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-                evnt.target.dataset.wish = 'false';
+            if(getDt!==null && getDt!=='abc'){
+                if(evnt.target.dataset['wish'] == 'false'){
+                    el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                    evnt.target.dataset.wish = 'true';
+                }else{
+                    el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                    evnt.target.dataset.wish = 'false';
+                }
+            }else{
+                alert('Login First');
             }
         })
     })
@@ -295,7 +276,6 @@ function renderCard3(data) {
 async function addBuyPay(id){
     let data = await fetch(`${baseUrl}/eyes/${id}`)
     data = await data.json();
-    // console.log(data);
     addingToCart(data);
 }
 
@@ -334,12 +314,16 @@ function renderCard5(data){
     let wishbtn = document.querySelectorAll('#gifting .cardSection #cardContainer .card .wishlist');
     wishbtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(evnt.target.dataset['wish'] == 'false'){
-                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-                evnt.target.dataset.wish = 'true';
+            if(getDt!==null && getDt!=='abc'){
+                if(evnt.target.dataset['wish'] == 'false'){
+                    el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                    evnt.target.dataset.wish = 'true';
+                }else{
+                    el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                    evnt.target.dataset.wish = 'false';
+                }
             }else{
-                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-                evnt.target.dataset.wish = 'false';
+                alert('Login First');
             }
         })
     })
@@ -358,7 +342,6 @@ function renderCard5(data){
 async function addGifting(id){
     let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/data/${id}`)
     data = await data.json();
-    // console.log(data);
     addingToCart(data);
 }
 
@@ -398,12 +381,16 @@ function renderCard4(data) {
     let wishbtn = document.querySelectorAll('#superSavers .cardSection #cardContainer .card .wishlist');
     wishbtn.forEach((el) => {
         el.addEventListener('click', function (evnt) {
-            if (evnt.target.dataset['wish'] == 'false') {
-                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-                evnt.target.dataset.wish = 'true';
-            } else {
-                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-                evnt.target.dataset.wish = 'false';
+            if(getDt!==null && getDt!=='abc'){
+                if(evnt.target.dataset['wish'] == 'false'){
+                    el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                    evnt.target.dataset.wish = 'true';
+                }else{
+                    el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                    evnt.target.dataset.wish = 'false';
+                }
+            }else{
+                alert('Login First');
             }
         })
     })
@@ -422,7 +409,6 @@ function renderCard4(data) {
 async function addsuperSavers(id){
     let data = await fetch(`${baseUrl}/makeupkit/${id}`)
     data = await data.json();
-    console.log(data);
     addingToCart(data);
 }
 
@@ -486,12 +472,16 @@ function renderCard6(data){
     let wishbtn = document.querySelectorAll('#merch .cardSection #cardContainer .card .wishlist');
     wishbtn.forEach((el)=>{
         el.addEventListener('click', function(evnt){
-            if(evnt.target.dataset['wish'] == 'false'){
-                el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
-                evnt.target.dataset.wish = 'true';
+            if(getDt!==null && getDt!=='abc'){
+                if(evnt.target.dataset['wish'] == 'false'){
+                    el.innerHTML = '<i class="fa-sharp fa-solid fa-heart" data-id="true"></i>';
+                    evnt.target.dataset.wish = 'true';
+                }else{
+                    el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
+                    evnt.target.dataset.wish = 'false';
+                }
             }else{
-                el.innerHTML = '<i class="fa-sharp fa-regular fa-heart" data-id="false"></i>';
-                evnt.target.dataset.wish = 'false';
+                alert('Login First');
             }
         })
     })
@@ -510,7 +500,6 @@ function renderCard6(data){
 async function addMerch(id){
     let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/merch/${id}`)
     data = await data.json();
-    console.log(data);
     addingToCart(data);
 }
 
@@ -552,19 +541,5 @@ explorePrev.addEventListener('click', function () {
     img4.src = exploreImg[3];
 })
 
-
-
-
-// //-------------linking-Page------;
-// let kkDepart = document.querySelector("#kohl_kajal");
-// let FDepart = document.querySelector("#faces");
-// let LipDepart = document.querySelector("#lips_page");
-
-// kkDepart.addEventListener("click", function () {
-//     window.location.href = "../product-page_kajal/kajal.html"
-// })
-// LipDepart.addEventListener("click", function () {
-//     window.location.href = "../product-page_kajal/lipstick.html"
-// })
 
 
