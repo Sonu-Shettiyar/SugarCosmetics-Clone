@@ -26,7 +26,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
 
 We worked on cloning a Cosmetic website and named it as BeautyBliss. This website is e-commerce website, which sells particular brand cosmetics. In this project, we used Javascript, HTML, bootstrap, and CSS. which we have merged by using GITHUB. Our project is dynamic and medium screen responsive in work.
 
