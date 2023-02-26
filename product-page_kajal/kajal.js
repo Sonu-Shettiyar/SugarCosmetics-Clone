@@ -1,3 +1,5 @@
+let getDt = localStorage.getItem("logger");
+
 let prodFil = document.querySelector("#typeHidden");
 let rightBar = document.querySelector("#rightBar");
 let CardDiv = document.querySelector("#CardAppender");
@@ -148,48 +150,38 @@ function renderCard(data) {
         img.src = ele.image;
         title.innerText = ele.title;
         strikePrice.innerText = "₹" + ele.totalprice;
-        add.innerText = "Add to Bag";
+        add.innerText = "Add To Cart";
 
+        add.addEventListener('click', async function () {
+            delete ele.id;
+            if (getDt !== null && getDt !== 'abc') {
+                let res = await fetch('https://beautybliss-cosmetics-mock-api.onrender.com/cart', {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({...ele, ...{nos:1}}),
+                    method: 'POST'
+                });
+                if (res.ok) {
+                    alert('Added To Cart')
+                }
+            } else {
+                alert('Login First');
+            }
+        })
         wishHeart.innerText = "🖤"
         wishHeart.addEventListener("click", function () {
-            if (wishHeart.innerText === "🖤") {
-                wishHeart.innerText = "💗"
+            if (getDt !== null && getDt !== 'abc') {
+                if (wishHeart.innerText === "🖤") {
+                    wishHeart.innerText = "💗"
+                } else {
+                    wishHeart.innerText = "🖤"
+                }
             } else {
-                wishHeart.innerText = "🖤"
+                alert('Login First');
             }
-
         })
         add.id = "sonu";
-        add.addEventListener("click", function (event) {
-            let prodObj = {
-                nos: 1,
-                category: ele.category,
-                image: ele.image,
-                quantity: ele.quantity,
-                rating: ele.rating,
-                sellingprice: ele.sellingprice,
-                title: ele.title,
-                totalprice: ele.totalprice,
-                type: ele.type
-            };
-
-            console.log(prodObj)
-            fetch(`https://beautybliss-cosmetics-mock-api.onrender.com/cart`, {
-                method: "POST",
-                body: JSON.stringify(prodObj),
-                headers: {
-                    "Content-type": `application/json`
-                }
-            })
-                .then((res) => {
-                    return res.json()
-                })
-                .then((data) => {
-                    console.log(data)
-                })
-        })
-
-
         price.innerText = "₹" + ele.sellingprice;
         if (ele.sellingprice == undefined) {
             price.innerText = "₹" + ele.totalprice;
