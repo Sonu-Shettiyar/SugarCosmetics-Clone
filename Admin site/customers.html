@@ -31,13 +31,13 @@
             </div>
 
             <div class="mid_sec">
-                <a href="./admin.html" >
+                <a href="./admin.html">
                     <span class="material-icons-sharp">
                         dashboard
-                        </span>
+                    </span>
                     <h3>DASHBOARD</h3>
                 </a>
-                <a href="./order.html" >
+                <a href="./order.html">
                     <span class="material-icons-sharp">
                         sell
                     </span>
@@ -46,19 +46,19 @@
                 <a href="./customers.html" class="active">
                     <span class="material-icons-sharp">
                         person
-                        </span>
+                    </span>
                     <h3>CUSTOMERS</h3>
                 </a>
                 <a href="./product.html">
                     <span class="material-icons-sharp">
                         inventory
-                        </span>
+                    </span>
                     <h3>PRODUCTS</h3>
                 </a>
-                <a href="./admin_login.html">
+                <a href="../index.html">
                     <span class="material-icons-sharp">
                         logout
-                        </span>
+                    </span>
                     <h3>LOGOUT</h3>
                 </a>
             </div>
@@ -66,7 +66,7 @@
         </div>
 
 
-        
+
         <div id="main">
             <div class="navbar">
                 <div>
@@ -80,40 +80,50 @@
                                 </span> </button>
                         </div>
                         <p><span class="material-icons-sharp">
-                            account_circle
+                                account_circle
                             </span>Admin</p>
                     </form>
                 </div>
             </div>
             <div class="info">
-               
+
                 <div class="box">
-                     <div id="sort1">
+                    <div id="sort1">
                         <select id="sort">
                             <option value="">sort</option>
                             <option value="asc">a to z</option>
                             <option value="desc">z to a</option>
                         </select>
+
+                    </div>
+                    <!--- table data --->
+                    <div  id="overflow">
+                        <table>
+                            <thead id="table_head">
+                                <tr>
+    
+                                    <th>User id</th>
+                                    <th>Name</th>
+                                    <th>Mobile Number</th>
+                                    <th>Email</th>
+                                    <th id="Address">Address</th>
+                                </tr>
+                            </thead>
+    
+                            <tbody id="table_body">
+                                <!--- All user data append here --->
+    
+                            </tbody>
+                        </table>
+
+                    </div>
                     
                 </div>
-                    <!--- table data ---> 
-               <table>
-               <thead id="table_head"> <tr>
-
-              <th>User id</th>  <th>Name</th> <th>Mobile Number</th> <th>Email</th> <th id="Address">Address</th>
-            </tr>
-        </thead>
-
-<tbody id="table_body"> 
-    <!--- All user data append here --->
-
-</tbody>
-</table>
-                </div> 
             </div>
         </div>
 
     </div>
 </body>
-<script src="./script/customers.js" ></script>
+<script src="./script/customers.js"></script>
+
 </html>

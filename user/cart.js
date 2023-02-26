@@ -28,7 +28,7 @@ c=0
 c1=0
 let p=`<div >${data.map(element => displaydata(element.image,element.title,element.totalprice,element.sellingprice,element.id,element.nos)).join(" ")}</div>`
     
-main.innerHTML=p
+main.innerHTML=p;
 
 //delete btn
 

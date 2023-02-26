@@ -1,0 +1,129 @@
+.orders_container{
+    padding: 40px;
+}
+.top > div{
+    display: flex;
+    height: 30px;
+    gap: 10px;
+}
+.top > div > h3{
+    display: flex;
+   align-items: center;
+}
+
+/* // ------- table --------- // */
+
+/* ----------------Table--------------------// */
+.data {
+    /* border-collapse: collapse; */
+    margin: 25px 0;
+    min-width: 100%;
+    /* height: calc(100vh - 240px); */
+    /* overflow-y: scroll; */
+    border-spacing: 0
+}
+
+/* .data td:nth-child(1) {
+    width: 10%;
+}
+
+.data td:nth-child(2) {
+    width: 25%;
+}
+
+.data td:nth-child(3) {
+    width: 15%;
+} */
+
+/* --------scroll bar -------- */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+/* .data::-webkit-scrollbar {
+    -webkit-appearance: scrollbartrack-vertical;
+}  */
+/* .head{
+    position: sticky;
+    top: 0;
+} */
+th.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: black;
+    color: white;
+    /* border-top: 1px solid #dddd;
+    border-bottom: 1px solid #dddd; */
+    /* border: 2px solid red; */
+}
+
+.overflow {
+    height: calc(100vh - 240px);
+    /* //172 */
+    /* height: calc(100vh - 133px); */
+    overflow: auto;
+    /* position:sticky; */
+    /* z-index:-1; */
+    /* color: aqua; */
+}
+
+.append {
+    /* height: calc(100vh - 20px); */
+    /* 240  */
+    /* overflow: hidden; */
+    /* background-color: aqua; */
+}
+
+.data th {
+    text-align: left;
+    color: white;
+    font-size: 14px;
+}
+
+.data th {
+    padding: 10px 15px;
+    border-top: 1px solid #dddd;
+    border-bottom: 1px solid #dddd;
+}
+
+.data td {
+    padding: 6px 15px;
+    font-size: 13px;
+    border-bottom: 1px solid #ddd;
+    transition: width 0.5s ease;
+}
+
+tbody>tr>td>div {
+    display: flex;
+}
+
+tbody>tr>td>div img {
+    width: 50px;
+    margin-right: 8px;
+    transition: 2000ms;
+    transition: 1000ms;
+}
+
+tbody>tr>td>div span {
+    margin: auto 0;
+}
+.cancel{
+    color: rgb(255, 157, 157);
+    cursor: pointer;
+}
+
+.cancel > span:hover{
+    font-size: 250%;
+    color: red;
+}
+.status {
+    font-weight: 800;
+}

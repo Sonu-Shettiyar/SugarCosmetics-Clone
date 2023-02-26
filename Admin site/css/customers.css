@@ -19,3 +19,20 @@ td{
     border-radius: 9px;
 border: black solid;
 }
+
+.bottom {
+    margin-top: 30px;
+    width: 100%;
+    overflow: auto;
+}
+
+.bottom table {
+    width: 100%;
+    overflow: auto;
+}
+#overflow{
+    overflow: auto;
+    height: calc(100vh - 150px);
+    /* height: 240px;
+    height: calc(100vh - 2000px); */
+}

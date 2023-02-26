@@ -3,16 +3,18 @@
 /* /// ------- info ---------/// */
 .top {
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
 }
-.top > h4{
+
+.top>h4 {
     text-align: center;
     display: flex;
-    align-items: center;  
+    align-items: center;
 }
+
 /* -----------------------------------------filter display none ------// */
-.filter_order{
-    /* display: none;   */
+.filter_order {
+    display: none;
     position: absolute;
     padding: 20px;
     width: 180px;
@@ -22,7 +24,8 @@
     box-shadow: var(--box-shadow);
     border: var(--box-border);
 }
-.filter_order + button{
+
+.filter_order+button {
     width: 80px;
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
@@ -30,31 +33,115 @@
     box-shadow: var(--box-shadow);
     border: var(--box-border);
 }
-.top button{
+
+/* ---------- filter submit button --------- */
+
+#submit {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: black;
+    margin: 5px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    display: flex;
+    text-align: center;
+    border-radius: var(--card-border-radious-2);
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #ddd;
+    color: black;
+    padding: 9px;
+    transition: 100ms;
+}
+
+
+.top button {
     padding: 8px;
     border-radius: var(--card-border-radious);
 }
-.top button h4{
- text-align: center;
- display: flex;
- align-items: center;
+
+.top button h4 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+/* ------- filter button -------  */
+
+#filter_button {
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: black;
+    color: white;
+    display: flex;
+    text-align: center;
+    border-radius: var(--card-border-radious-2);
+    cursor: pointer;
+    width: 135px;
+}
+
+#filter_button:hover {
+    background-color: #ddd;
+    color: black;
+    padding: 6px;
+    transition: 100ms;
+}
+
+#filter_button>p {
+    color: white;
+    margin: auto 0 auto 5px;
+    font-weight: bold;
+    font-size: var(--font-button);
+}
+
+#filter_button>p:hover {
+    color: black;
 }
 
 /* /// filter ///--------hidden div  */
 
 /* for table data  */
-.bottom{
+.bottom {
+    margin-top: 30px;
+    width: 100%;
+    overflow: auto;
+}
 
+.bottom table {
+    width: 100%;
+    overflow: auto;
 }
-#head>td{
+.overflow{
+    overflow: auto;
+    height: calc(100vh - 240px);
+}
+
+/* #head>td{
     padding: 10px 20px 10px 20px;
+} */
+thead {
+    width: 100%;
+    background-color: black;
+    color: white;
 }
-thead{ 
-    width: 200px;
+
+#tbody {
+    text-align: center;
+    width: 100%;
    
-   background-color: black; 
-   color: white;
 }
-tbody{
-text-align: center;
+
+/* .bot td:nth-child(1) {
+    width: 40%;
 }
+
+.data td:nth-child(2) {
+    width: 25%;
+}
+
+.data td:nth-child(3) {
+    width: 15%;
+} */

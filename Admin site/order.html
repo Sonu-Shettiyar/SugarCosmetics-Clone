@@ -97,6 +97,12 @@
                             ORDERS
                         </h4>
                         <div>
+                            <button id="filter_button">
+                                <span class="material-icons-sharp">
+                                    filter_alt
+                                </span>
+                                <p>Filter</p>
+                            </button>
                             <!-- ---------------------------------------------Filter div ---------// -->
                             <div class="filter_order">
                                 <div>
@@ -106,51 +112,54 @@
                                 <div> <input type="radio" id="B" name="filter" value="">
                                     <label for="B">Pending</label><br>
                                 </div>
-                                <div> <input type="radio" id="C" name="filter" value="">
+                                <!-- <div> <input type="radio" id="C" name="filter" value="">
                                     <label for="C">Processing</label><br>
-                                </div>
-                                
+                                </div> -->
+
                                 <div>
                                     <input type="radio" id="E" name="filter" value="">
                                     <label for="E">Cancelled</label><br>
                                 </div>
-                                <div>
+                                <!-- <div>
                                     <input type="radio" id="F" name="filter" value="">
                                     <label for="F">Failded</label><br><br>
-                                </div>
+                                </div> -->
 
                                 <input id="submit" type="submit" value="Submit">
                             </div>
-                         
+
                         </div>
 
                     </div>
                     <div class="bottom">
-                        <table>
-       <thead>
-           <tr id="head">
-        <td>order id</td>
-        <td>Date added</td>
-        <td>Name</td>
-        <td>Payment Mathod</td>
-        <td>Status</td>
-        <td>Total Price</td>
-        <td>Total product</td>
-      </tr>
-       </thead>
-  </div>
-  <!-- - - > - - - - - - > table body < - - - < - - -->
-  <tbody id="tbody">
-    <!-- ///////////// APPEND DATA HERE ////////////////////// -->
+                        <div class="overflow">
+                            <table>
+                                <thead>
+                                    <tr id="head">
+                                        <th>order id</th>
+                                        <th>Date added</th>
+                                        <th>Name</th>
+                                        <th>Payment Mathod</th>
+                                        <th>Status</th>
+                                        <th>Total Price</th>
+                                        <th>Total product</th>
+                                    </tr>
+                                </thead>
+                        </div>
+                        <!-- - - > - - - - - - > table body < - - - < - - -->
+                        <tbody id="tbody">
+                            <!-- ///////////// APPEND DATA HERE ////////////////////// -->
 
-</tbody>
-  </table>
+                        </tbody>
+                        </table>
+                    </div>
 
 
-<!-- create new div inside that put table data td > tr -->
 
-     <!-- paste javascript in script folder -->
-   <!-- ///////////// APPEND DATA HERE ////////////////////// -->
+                    <!-- create new div inside that put table data td > tr -->
+
+                    <!-- paste javascript in script folder -->
+                    <!-- ///////////// APPEND DATA HERE ////////////////////// -->
 
                 </div>
             </div>
@@ -161,4 +170,5 @@
 <script src="./script/order.js">
 
 </script>
+
 </html>
