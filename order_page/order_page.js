@@ -41,9 +41,9 @@ async function fetch_Data(value) {
     for (let x of status) {
         // console.log(x);
         console.log(x.innerText);
-        if(x.innerText == "Complete"){
+        if (x.innerText == "Complete") {
             x.style.color = "#023020"
-        } else if (x.innerText == "Cancelled"){
+        } else if (x.innerText == "Cancelled") {
             x.style.color = "#FF0000"
         } else {
             x.style.color = "#FFA500"
@@ -120,8 +120,7 @@ function card(order_id, count, status, total, product_arr, date) {
         cancel
         </span></td>
     </tr>
-    ${get_products(product_arr)
-        }
+    ${(get_products(product_arr) || "")}
     `
     return card;
 }
