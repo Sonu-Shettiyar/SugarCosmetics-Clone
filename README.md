@@ -64,5 +64,5 @@ We worked on cloning a Cosmetic website and named it as BeautyBliss. This websit
 
 Team Members Name - [@linkdin_handle](https://www.linkedin.com/in/sonu-shettiyar-071965228/) - sonubadmash003@gmail.com
                   - [@linkdin_handle](https://www.linkedin.com/in/tejas-shelke/)
-                  - [@linkdin_handle](https://www.linkedin.com/in/mangalam-kumar-3236b3249/)
+                  - [@linkdin_handle](https://www.linkedin.com/in/mangalam-kumar-3236b3249/) - Mangalam Kumar
 Project Link: [https://github.com/Sonu-Shettiyar/bright-stamp-7114](https://gleeful-lily-870fcb.netlify.app/)
