@@ -300,7 +300,7 @@ prevButton5.addEventListener('click', function(){
 })
 
 async function fetchAndRender5(pageNumber=1){
-    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/data?_limit=4&_page=${pageNumber}`);
+    let data = await fetch(`https://gift-api-vch2.onrender.com/data?_limit=4&_page=${pageNumber}`);
     giftPages = Math.ceil(data.headers.get('X-Total-Count')/4);
     data = await data.json();
     renderCard5(data);
@@ -340,7 +340,7 @@ function renderCard5(data){
 }
 
 async function addGifting(id){
-    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/data/${id}`)
+    let data = await fetch(`https://gift-api-vch2.onrender.com/data/${id}`)
     data = await data.json();
     addingToCart(data);
 }
@@ -458,7 +458,7 @@ prevButton6.addEventListener('click', function(){
 })
 
 async function fetchAndRender6(pageNumber=1){
-    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/merch?_limit=4&_page=${pageNumber}`);
+    let data = await fetch(`https://gift-api-vch2.onrender.com/merch?_limit=4&_page=${pageNumber}`);
     merchPages = Math.ceil(data.headers.get('X-Total-Count')/4);
     data = await data.json();
     renderCard6(data);
@@ -498,7 +498,7 @@ function renderCard6(data){
 }
 
 async function addMerch(id){
-    let data = await fetch(`https://odd-pear-scallop-ring.cyclic.app/merch/${id}`)
+    let data = await fetch(`https://gift-api-vch2.onrender.com/merch/${id}`)
     data = await data.json();
     addingToCart(data);
 }
